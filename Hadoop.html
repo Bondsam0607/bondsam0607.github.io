@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-05-17 Tue 00:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hadoop</title>
+<meta name="author" content="Caihao Hu" />
+<meta name="description" content="This org file contains notes of Hadoop" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Hadoop</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1992909">1. Chapter1 Meet Hadoop</a>
+<ul>
+<li><a href="#orgbe5e0d5">1.1. Data Anaylysis and storage</a></li>
+<li><a href="#org8f1a1cf">1.2. Comparing with other systems</a>
+<ul>
+<li><a href="#org31370cd">1.2.1. RDBMS</a></li>
+<li><a href="#org47bcc32">1.2.2. Grid Computing</a></li>
+<li><a href="#orgfc07f40">1.2.3. Volunteer Computing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc60a9f0">2. Chapter2 MapReduce</a>
+<ul>
+<li><a href="#org63e07f7">2.1. Map and Reduce</a>
+<ul>
+<li><a href="#org26e5a72">2.1.1. Java MapReduce</a></li>
+</ul>
+</li>
+<li><a href="#org4bdfd03">2.2. Data Flow of Hadoop</a>
+<ul>
+<li><a href="#org50d545f">2.2.1. Overview</a></li>
+<li><a href="#org8cfa8ba">2.2.2. Map</a></li>
+<li><a href="#orge49edfd">2.2.3. Combine</a></li>
+<li><a href="#org231160f">2.2.4. Reduce</a></li>
+</ul>
+</li>
+<li><a href="#orgaaee352">2.3. Hadoop Streaming</a></li>
+<li><a href="#org38ff166">2.4. Hadoop Pipes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1992909" class="outline-2">
+<h2 id="org1992909"><span class="section-number-2">1.</span> Chapter1 Meet Hadoop</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgbe5e0d5" class="outline-3">
+<h3 id="orgbe5e0d5"><span class="section-number-3">1.1.</span> Data Anaylysis and storage</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Read &amp; write data on a single drive can be very slow -&gt; we need parallel read &amp; write on multiple drives at once
+</p>
+<ul class="org-ul">
+<li>Thus we face two problems:
+<ol class="org-ol">
+<li>(Storage) Hardware failure, can be solved by replication via HDFS</li>
+<li>(Analysis) Combine data, can be done by MapReduce</li>
+</ol></li>
+</ul>
+<p>
+<b>Hadoop provides a reliable shared storage and analysis system</b>
+</p>
+</div>
+</div>
+<div id="outline-container-org8f1a1cf" class="outline-3">
+<h3 id="org8f1a1cf"><span class="section-number-3">1.2.</span> Comparing with other systems</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org31370cd" class="outline-4">
+<h4 id="org31370cd"><span class="section-number-4">1.2.1.</span> RDBMS</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Why do we use MapReduce instead of databases?
+<b>Seek time is improving more slowly than transfer time</b>
+</p>
+
+<p>
+<b>MapReduce</b> is suitable for:
+</p>
+<ol class="org-ol">
+<li>the scenario of updating the majority of a database</li>
+<li>analyzing the whole dataset</li>
+<li>the scenario where the data is written once and read many times</li>
+<li>semi-structured data and unstructured data</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org47bcc32" class="outline-4">
+<h4 id="org47bcc32"><span class="section-number-4">1.2.2.</span> Grid Computing</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+MapReduce tries to colocate the data with the compute node to decrease the access time.
+Using MapReduce, the programmer thinks in terms of functions of key and value pairs, and the data flow is implicit. (don&rsquo;t need to know the exact data flow)
+MapReduce detects failures of &ldquo;map&rdquo; and &ldquo;reduce&rdquo; and reschedules them to the healthy machines.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfc07f40" class="outline-4">
+<h4 id="orgfc07f40"><span class="section-number-4">1.2.3.</span> Volunteer Computing</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+MapReduce is designed to run jobs that last minutes or hours on trusted, dedicated hardware running in a data center with high aggregate bandwidth interconnects.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc60a9f0" class="outline-2">
+<h2 id="orgc60a9f0"><span class="section-number-2">2.</span> Chapter2 MapReduce</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+MapReduce is the tool of Hadoop to analyze data.
+</p>
+<ul class="org-ul">
+<li>With steps of:
+<ol class="org-ol">
+<li>Map</li>
+<li>Combine</li>
+<li>Reduce</li>
+<li>Partition</li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-org63e07f7" class="outline-3">
+<h3 id="org63e07f7"><span class="section-number-3">2.1.</span> Map and Reduce</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+To speed up processing, we need to run parts of the program in parallel.
+We may split the task into different categories
+</p>
+<ul class="org-ul">
+<li>while facing some problems:
+<ol class="org-ol">
+<li>Dividing the work into equal-size pieces isn&rsquo;t always easy or obvious.
+<span class="underline">Solution: split the input into fixed-size chunks</span></li>
+<li>Combining the results from independent processes can need further processing.
+<span class="underline">Solution: chunk result needs to be combined</span></li>
+<li>Limited by the processing capacity of a single machine.</li>
+</ol></li>
+</ul>
+</div>
+<div id="outline-container-org26e5a72" class="outline-4">
+<h4 id="org26e5a72"><span class="section-number-4">2.1.1.</span> Java MapReduce</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+In Java, you need to implement the <b>Mapper</b> and <b>Reducer</b> interface.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #556b2f;">// </span><span style="color: #556b2f;">input key, input value, output key, output value</span>
+<span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">MaxTemperatureMapper</span> <span style="font-weight: bold;">extends</span> <span style="font-weight: bold;">MapReduceBase</span> <span style="font-weight: bold;">implements</span> <span style="font-weight: bold;">Mapper</span><span style="color: #014980;">&lt;</span><span style="font-weight: bold;">LongWritable</span>, <span style="font-weight: bold;">Text</span>, <span style="font-weight: bold;">Text</span>, <span style="font-weight: bold;">IntWritable</span><span style="color: #014980;">&gt;</span> <span style="color: #014980;">{}</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">public</span>   <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">MaxTemperatureReducer</span> <span style="font-weight: bold;">extends</span> <span style="font-weight: bold;">MapReduceBase</span> <span style="font-weight: bold;">implements</span> <span style="font-weight: bold;">Reducer</span><span style="color: #014980;">&lt;</span><span style="font-weight: bold;">Text</span>, <span style="font-weight: bold;">IntWritable</span>, <span style="font-weight: bold;">Text</span>, <span style="font-weight: bold;">IntWritable</span><span style="color: #014980;">&gt;</span> <span style="color: #014980;">{}</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">maxtemperature</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">string</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="color: #556b2f;">// </span><span style="color: #556b2f;">register new job</span>
+        <span style="font-weight: bold;">jobconf</span> <span style="color: #383a42;">conf</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">jobconf</span><span style="color: #556b2f;">(</span>maxtemperature.<span style="font-weight: bold;">class</span><span style="color: #556b2f;">)</span>;
+
+        fileinputformat.addinputpath<span style="color: #556b2f;">(</span>conf, <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">path</span><span style="color: #b751b6;">(</span><span style="color: #556b2f;">/*</span><span style="color: #556b2f;">input path</span><span style="color: #556b2f;">*/</span><span style="color: #b751b6;">)</span><span style="color: #556b2f;">)</span>; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">can be multiple</span>
+        fileoutputformat.setoutputpath<span style="color: #556b2f;">(</span>conf, <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">path</span><span style="color: #b751b6;">(</span><span style="color: #556b2f;">/*</span><span style="color: #556b2f;">output path</span><span style="color: #556b2f;">*/</span><span style="color: #b751b6;">)</span><span style="color: #556b2f;">)</span>;
+
+        conf.setmapperclass<span style="color: #556b2f;">(</span>maxtemperaturemapper.<span style="font-weight: bold;">class</span><span style="color: #556b2f;">)</span>;
+        conf.setreducerclass<span style="color: #556b2f;">(</span>maxtemperaturereducer.<span style="font-weight: bold;">class</span><span style="color: #556b2f;">)</span>;
+
+        conf.setoutputkeyclass<span style="color: #556b2f;">(</span>text.<span style="font-weight: bold;">class</span><span style="color: #556b2f;">)</span>;
+        conf.setoutputvalueclass<span style="color: #556b2f;">(</span>intwritable.<span style="font-weight: bold;">class</span><span style="color: #556b2f;">)</span>;
+
+        jobclient.runjob<span style="color: #556b2f;">(</span>conf<span style="color: #556b2f;">)</span>
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+<p>
+When we run this job on a Hadoop cluster, we will package the code into a JAR file (which Hadoop will distribute around the cluster).
+</p>
+<ul class="org-ul">
+<li>There are three modes of Hadoop:
+<ol class="org-ol">
+<li><b>Standalone</b> mode is the mode where Hadoop runs using the local filesystem with a local job runner.</li>
+<li><b>Pseudo-Distributed</b> mode needs start Hadoop daemon while all the daemons run on the local mahcine.</li>
+<li><b>Fully Distributed</b> mode runs on a real Hadoop cluster.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4bdfd03" class="outline-3">
+<h3 id="org4bdfd03"><span class="section-number-3">2.2.</span> Data Flow of Hadoop</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org50d545f" class="outline-4">
+<h4 id="org50d545f"><span class="section-number-4">2.2.1.</span> Overview</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+A MapReduce job is a unit of work that the client wants to be performed.
+</p>
+<ul class="org-ul">
+<li>including:
+<ol class="org-ol">
+<li>input data</li>
+<li>MapReduce program</li>
+<li>configuration information</li>
+</ol></li>
+</ul>
+<ul class="org-ul">
+<li>There are two types of nodes controlling the job execution:
+<ol class="org-ol">
+<li>a jobtracker</li>
+<li>several tasktrackers</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8cfa8ba" class="outline-4">
+<h4 id="org8cfa8ba"><span class="section-number-4">2.2.2.</span> Map</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+Hadoop divides the input to a MapReduce job into fiexed-sized pieces called <i>splits</i> for better load balance.
+But if the <i>splits</i> are too small, then the overhead of managing the splits and of map task creation begins to dominate the total job execution time. For most jobs, a good <i>split</i> size tends to be the size of a HDFS block, 64MB by default.
+Hadoop tries to run the map task on a node where the input data resides in HDFS to obtain <b>data locality optimization</b>.
+</p>
+</div>
+</div>
+<div id="outline-container-orge49edfd" class="outline-4">
+<h4 id="orge49edfd"><span class="section-number-4">2.2.3.</span> Combine</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+Combine tasks are used to optimize the performance of MapReduce.
+It might be called or not.
+Combine tasks reside between Map tasks and Reduce tasks.
+Combiner function is defined using the <b>Reducer</b> interface.
+</p>
+</div>
+</div>
+<div id="outline-container-org231160f" class="outline-4">
+<h4 id="org231160f"><span class="section-number-4">2.2.4.</span> Reduce</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<p>
+Reduce tasks don&rsquo;t have the advantage of data locality.
+The input to a single reduce task is normally the output from all mappers.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgaaee352" class="outline-3">
+<h3 id="orgaaee352"><span class="section-number-3">2.3.</span> Hadoop Streaming</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+<b>Hadoop Streaming</b> uses Unix standard stream(Pipeline) as the interface between Hadoop and your program.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org38ff166" class="outline-3">
+<h3 id="org38ff166"><span class="section-number-3">2.4.</span> Hadoop Pipes</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<b>Hadoop Pipes</b> is the name of C++ interface to Hadoop MapReduce.
+Pipes use sockets as the channel over which the tasktracker communications with the process running the C++ map or reduce function.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Caihao Hu</p>
+<p class="date">Created: 2022-05-17 Tue 00:33</p>
+</div>
+</body>
+</html>
