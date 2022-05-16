@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-05-17 Tue 00:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java</title>
+<meta name="author" content="Caihao Hu" />
+<meta name="description" content="This org file contains notes of Java language" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Java</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org23e25b7">1. RoadMap</a>
+<ul>
+<li><a href="#org246f36b">1.1. <span class="done DONE">DONE</span> Day1 <code>[3/3]</code></a></li>
+<li><a href="#orgacd41d9">1.2. <span class="todo TODO">TODO</span> Day2 <code>[1/2]</code></a></li>
+<li><a href="#orgbd1e050">1.3. <span class="todo TODO">TODO</span> Day3 <code>[0/4]</code></a></li>
+<li><a href="#orgd906888">1.4. <span class="todo TODO">TODO</span> Day4 <code>[0/3]</code></a></li>
+<li><a href="#org9c8003b">1.5. <span class="todo TODO">TODO</span> Day5 <code>[0/4]</code></a></li>
+<li><a href="#org302ff8a">1.6. <span class="todo TODO">TODO</span> Day6 <code>[0/3]</code></a></li>
+<li><a href="#org1fdebb9">1.7. <span class="todo TODO">TODO</span> Day7 <code>[0/4]</code></a></li>
+<li><a href="#orga88ffeb">1.8. <span class="todo TODO">TODO</span> Day8 <code>[0/4]</code></a></li>
+</ul>
+</li>
+<li><a href="#org0b8703a">2. Overview</a>
+<ul>
+<li><a href="#org4f2e89c">2.1. Terminology</a>
+<ul>
+<li><a href="#orge67c091">2.1.1. Components of JRE</a></li>
+</ul>
+</li>
+<li><a href="#org7b4d315">2.2. JAR component</a></li>
+<li><a href="#orge23bc37">2.3. JVM Architecture</a>
+<ul>
+<li><a href="#org1add750">2.3.1. Class Loader</a></li>
+<li><a href="#org312cc8e">2.3.2. JVM memory</a></li>
+<li><a href="#org8f37797">2.3.3. Execution Engine</a></li>
+<li><a href="#org218fc63">2.3.4. JNI(Java Native Interface)</a></li>
+</ul>
+</li>
+<li><a href="#orgc8564f9">2.4. Execution of Java</a></li>
+</ul>
+</li>
+<li><a href="#org64dc858">3. Basics</a>
+<ul>
+<li><a href="#orgf428d72">3.1. Data Types</a></li>
+<li><a href="#org97322d6">3.2. Primitive Data Type vs Object Data Type</a></li>
+<li><a href="#org84dfe94">3.3. Variables</a></li>
+<li><a href="#org24eadc6">3.4. Wrapper Classes</a></li>
+</ul>
+</li>
+<li><a href="#org71c3446">4. I/O</a>
+<ul>
+<li><a href="#org9a7eb68">4.1. Input</a>
+<ul>
+<li><a href="#org1d46c24">4.1.1. BufferedReader</a></li>
+<li><a href="#orgb782735">4.1.2. Scanner</a></li>
+<li><a href="#org5f320d2">4.1.3. Difference between BufferedReader and Scanner</a></li>
+</ul>
+</li>
+<li><a href="#org6db1ca0">4.2. Output</a>
+<ul>
+<li><a href="#org849a491">4.2.1. Formatted output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgedcf29e">5. Strings</a>
+<ul>
+<li><a href="#org0710345">5.1. Overview</a>
+<ul>
+<li><a href="#org0240c63">5.1.1. String Constant Pool</a></li>
+<li><a href="#org5daa548">5.1.2. String is immutable</a></li>
+<li><a href="#org02870dd">5.1.3. Reference count</a></li>
+</ul>
+</li>
+<li><a href="#org0c23805">5.2. String Alternatives</a>
+<ul>
+<li><a href="#org5df4f92">5.2.1. StringBuffer(Recommended)</a></li>
+<li><a href="#org6dbfba3">5.2.2. StringBuilder</a></li>
+<li><a href="#org48586dd">5.2.3. StringTokenizer</a></li>
+<li><a href="#org3c0ee80">5.2.4. StringJoiner</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org199b67b">6. Arrays</a>
+<ul>
+<li><a href="#orgdb5bd47">6.1. Features of Arrays</a></li>
+<li><a href="#org30350aa">6.2. Utilizing an Array</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org23e25b7" class="outline-2">
+<h2 id="org23e25b7"><span class="section-number-2">1.</span> RoadMap</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This RoadMap contains the day-divided workload of learning Java.
+</p>
+</div>
+<div id="outline-container-org246f36b" class="outline-3">
+<h3 id="org246f36b"><span class="section-number-3">1.1.</span> <span class="done DONE">DONE</span> Day1 <code>[3/3]</code></h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li class="on"><code>[X]</code> <a href="#org0b8703a">Overview</a></li>
+<li class="on"><code>[X]</code> <a href="#org64dc858">Basics</a></li>
+<li class="on"><code>[X]</code> <a href="#org71c3446">I/O</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgacd41d9" class="outline-3">
+<h3 id="orgacd41d9"><span class="section-number-3">1.2.</span> <span class="todo TODO">TODO</span> Day2 <code>[1/2]</code></h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li class="on"><code>[X]</code> <a href="#orgedcf29e">Strings</a></li>
+<li class="trans"><code>[-]</code> <a href="#org199b67b">Arrays</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbd1e050" class="outline-3">
+<h3 id="orgbd1e050"><span class="section-number-3">1.3.</span> <span class="todo TODO">TODO</span> Day3 <code>[0/4]</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> OOP</li>
+<li class="off"><code>[&#xa0;]</code> Abstraction</li>
+<li class="off"><code>[&#xa0;]</code> Encapsulation</li>
+<li class="off"><code>[&#xa0;]</code> Ploymorphism</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd906888" class="outline-3">
+<h3 id="orgd906888"><span class="section-number-3">1.4.</span> <span class="todo TODO">TODO</span> Day4 <code>[0/3]</code></h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Constructor</li>
+<li class="off"><code>[&#xa0;]</code> Methods</li>
+<li class="off"><code>[&#xa0;]</code> interface</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9c8003b" class="outline-3">
+<h3 id="org9c8003b"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> Day5 <code>[0/4]</code></h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> wrapper classes</li>
+<li class="off"><code>[&#xa0;]</code> keywords</li>
+<li class="off"><code>[&#xa0;]</code> access modifiers</li>
+<li class="off"><code>[&#xa0;]</code> memory allocation</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org302ff8a" class="outline-3">
+<h3 id="org302ff8a"><span class="section-number-3">1.6.</span> <span class="todo TODO">TODO</span> Day6 <code>[0/3]</code></h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> classes</li>
+<li class="off"><code>[&#xa0;]</code> packages</li>
+<li class="off"><code>[&#xa0;]</code> collection framework</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1fdebb9" class="outline-3">
+<h3 id="org1fdebb9"><span class="section-number-3">1.7.</span> <span class="todo TODO">TODO</span> Day7 <code>[0/4]</code></h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> list</li>
+<li class="off"><code>[&#xa0;]</code> queue</li>
+<li class="off"><code>[&#xa0;]</code> map</li>
+<li class="off"><code>[&#xa0;]</code> set</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga88ffeb" class="outline-3">
+<h3 id="orga88ffeb"><span class="section-number-3">1.8.</span> <span class="todo TODO">TODO</span> Day8 <code>[0/4]</code></h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> exception handler</li>
+<li class="off"><code>[&#xa0;]</code> multi-threading</li>
+<li class="off"><code>[&#xa0;]</code> synchronization</li>
+<li class="off"><code>[&#xa0;]</code> file handling</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b8703a" class="outline-2">
+<h2 id="org0b8703a"><span class="section-number-2">2.</span> Overview</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org4f2e89c" class="outline-3">
+<h3 id="org4f2e89c"><span class="section-number-3">2.1.</span> Terminology</h3>
+<div class="outline-text-3" id="text-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Terminology</td>
+<td class="org-left">Usage</td>
+</tr>
+
+<tr>
+<td class="org-left">JDK(Java Development Kit)</td>
+<td class="org-left">including compiler, JRE, Java Debugger, Javadoc</td>
+</tr>
+
+<tr>
+<td class="org-left">JRE(Java Runtime Environment)</td>
+<td class="org-left">allows the program to run, includes a browser, JVM, applets support, plugins</td>
+</tr>
+
+<tr>
+<td class="org-left">JVM(Java Virtual Machine)</td>
+<td class="org-left">executes the bytecode generated by the compiler</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<a href="https://media.geeksforgeeks.org/wp-content/uploads/20210218150010/JDK.png">JDK vs JRE vs JVM</a>
+</p>
+</div>
+
+<div id="outline-container-orge67c091" class="outline-4">
+<h4 id="orge67c091"><span class="section-number-4">2.1.1.</span> Components of JRE</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ol class="org-ol">
+<li>Deployment technologies
+<ul class="org-ul">
+<li>Deployment</li>
+<li>Java Web Start</li>
+<li>Java Plugin</li>
+</ul></li>
+<li>User Interface Toolkits
+<ul class="org-ul">
+<li>Abstract Window Toolkit(AWT)</li>
+<li>Swing</li>
+<li>Java 2D</li>
+<li>Accessibility</li>
+<li>Image I/O</li>
+<li>Print Service</li>
+<li>Sound</li>
+<li>etc.</li>
+</ul></li>
+<li>Integration Libraries
+<ul class="org-ul">
+<li>JDBC</li>
+<li>Java Naming and Directory Interface(JNDI)</li>
+</ul></li>
+<li>Other Base Libraries
+<ul class="org-ul">
+<li>International Support</li>
+<li>I/O</li>
+<li>Math</li>
+<li>Networking</li>
+<li>etc.</li>
+</ul></li>
+<li>Lang and Util Base Libraries
+<ul class="org-ul">
+<li>Lang and Util</li>
+<li>Management</li>
+<li>Zip</li>
+<li>Java Archive(JAR)</li>
+<li>etc.</li>
+</ul></li>
+<li>JVM</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7b4d315" class="outline-3">
+<h3 id="org7b4d315"><span class="section-number-3">2.2.</span> JAR component</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+JAR is part of JDK, a full pack of Java classes.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #556b2f;"># </span><span style="color: #556b2f;">create a .jar file, this jar file includes Hello.class</span>
+jar -create -file Hello.jar Hello.class
+<span style="color: #556b2f;"># </span><span style="color: #556b2f;">use jar file to run</span>
+java -cp Hello.jar hello_world
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge23bc37" class="outline-3">
+<h3 id="orge23bc37"><span class="section-number-3">2.3.</span> JVM Architecture</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+<a href="https://media.geeksforgeeks.org/wp-content/uploads/jvm-3.jpg">JVM Architecture</a>
+</p>
+</div>
+<div id="outline-container-org1add750" class="outline-4">
+<h4 id="org1add750"><span class="section-number-4">2.3.1.</span> Class Loader</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li>There are three phases of class loader:
+<ol class="org-ol">
+<li>Loading</li>
+<li>Linking</li>
+<li>Initialization</li>
+</ol></li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="org7572d77"></a>Loading<br />
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+In this phase, class loader reads the .class file, generate the corresponding binary data and save it in the <b>method area</b>.
+</p>
+<ul class="org-ul">
+<li>It stores the following information in the <b>method area</b>:
+<ul class="org-ul">
+<li>the fully qualified name of the loaded class and its immediate parent class</li>
+<li>whether the .class file is related to Class or Interface or Enum</li>
+<li>Modifier, Variables and Method information etc.</li>
+</ul></li>
+</ul>
+<p>
+After loading .class file, JVM creates an object of type Class(stores info about a class) to represent this file in the heap.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Student</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">private</span> <span style="font-weight: bold;">String</span> <span style="color: #383a42;">name</span>;
+    <span style="font-weight: bold;">private</span> <span style="font-weight: bold;">int</span> <span style="color: #383a42;">roll_No</span>;
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">String</span> <span style="font-weight: bold;">getName</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{}</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">setName</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{}</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">int</span> <span style="font-weight: bold;">getRoll_no</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{}</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">setRoll_no</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{}</span>
+<span style="color: #014980;">}</span>
+<span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
+  <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span>
+  <span style="color: #a626a4;">{</span>
+    <span style="font-weight: bold;">Student</span> <span style="color: #383a42;">s1</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">Student</span><span style="color: #556b2f;">()</span>;
+    <span style="font-weight: bold;">Class</span> <span style="color: #383a42;">c1</span> = s1.getClass<span style="color: #556b2f;">()</span>; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">c1 is stored in heap by JVM</span>
+    System.out.println<span style="color: #556b2f;">(</span>c1.getName<span style="color: #b751b6;">()</span><span style="color: #556b2f;">)</span>; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">Student</span>
+    <span style="font-weight: bold;">Method</span> <span style="color: #383a42;">m</span><span style="color: #556b2f;">[]</span> = c1.getDeclaredMethods<span style="color: #556b2f;">()</span>;
+    <span style="font-weight: bold;">for</span> <span style="color: #556b2f;">(</span><span style="font-weight: bold;">Method</span> <span style="color: #383a42;">method</span> : m<span style="color: #556b2f;">)</span>
+    <span style="color: #556b2f;">{</span>
+      System.out.println<span style="color: #b751b6;">(</span>method.getName<span style="color: #014980;">()</span><span style="color: #b751b6;">)</span>; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">getName, setName, getRoll_no, setRoll_no</span>
+    <span style="color: #556b2f;">}</span>
+    <span style="font-weight: bold;">Field</span> <span style="color: #383a42;">f</span><span style="color: #556b2f;">[]</span> = c1.getDeclaredFields<span style="color: #556b2f;">()</span>;
+    <span style="font-weight: bold;">for</span> <span style="color: #556b2f;">(</span><span style="font-weight: bold;">Field</span> <span style="color: #383a42;">field</span> : f<span style="color: #556b2f;">)</span>
+    <span style="color: #556b2f;">{</span>
+      System.out.println<span style="color: #b751b6;">(</span>field.getName<span style="color: #014980;">()</span><span style="color: #b751b6;">)</span>; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">name, roll_No</span>
+    <span style="color: #556b2f;">}</span>
+    <span style="color: #556b2f;">// </span><span style="color: #556b2f;">For every loaded .class file, only one object of type Class is created.</span>
+    <span style="font-weight: bold;">Student</span> <span style="color: #383a42;">s2</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">Student</span><span style="color: #556b2f;">()</span>;
+    <span style="font-weight: bold;">Class</span> <span style="color: #383a42;">c2</span> = s2.getClass<span style="color: #556b2f;">()</span>;
+    <span style="font-weight: bold;">assert</span> <span style="color: #383a42;">c1</span> == c2; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">true</span>
+  <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orga5a3a6f"></a>Linking<br />
+<div class="outline-text-5" id="text-2-3-1-2">
+<ul class="org-ul">
+<li>In this phase, class loader performs three actions:
+<ul class="org-ul">
+<li>Verification:
+It checks whether this file is properly formatted and generated by a valid compiler or not.
+If valid, ready for compilation.</li>
+<li>Preparation:
+JVM allocates memory for class variables and initializing the memory to default values.</li>
+<li>Resolution:
+replacing references.</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org856c2e2"></a>Initialization<br />
+<div class="outline-text-5" id="text-2-3-1-3">
+<p>
+All static variables are assigned with their values defined in the code and static block.
+</p>
+<ul class="org-ul">
+<li>There are three loaders:
+<ul class="org-ul">
+<li>Bootstrap class loader
+It loads trusted classes(e.g. String), loads core Java API in bootstrap path, implementing in native languages like C, C++.</li>
+<li>Extension class loader
+It is a child of the bootstrap class loader, loading the classes present in the extension directories, implementing in Java by <code>sun.misc.Launcher$ExtClassLoader</code></li>
+<li>System/Application class loader
+It is a child of the extension class loader(e.g. user-defined class), loading classes from application classpath, implemented in Java by <code>sun.misc.Launcher$AppClassLoader</code></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org312cc8e" class="outline-4">
+<h4 id="org312cc8e"><span class="section-number-4">2.3.2.</span> JVM memory</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li>JVM memory contains:
+<ul class="org-ul">
+<li>Method Area
+one per JVM, shared resource among all JVM threads, stores per-class structures including class name, immediate parent class name, methods and variables information</li>
+<li>Heap Area:
+one per JVM</li>
+<li>Stack Area:
+For every thread, JVM creates one run-time stack.
+Each block inside the stack is a frame, storing method calls.</li>
+<li>PC Registers
+It stores address of current execution instruction of a thread, each thread has seperate PC registers.</li>
+<li>Native Method Stacks
+per-thread, storing native method information</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8f37797" class="outline-4">
+<h4 id="org8f37797"><span class="section-number-4">2.3.3.</span> Execution Engine</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<ul class="org-ul">
+<li>Execution process:
+<ol class="org-ol">
+<li>reads the byte-code line by line</li>
+<li>uses data and information present in various memory area</li>
+<li>executes instruction</li>
+</ol></li>
+<li>Three parts of Execution Engine:
+<ul class="org-ul">
+<li>Interpreter
+It interprets the bytecode and executes.
+CONs: every time a method is called, interpretation is required</li>
+<li>JIT(Just-In-Time) Compiler
+It increases the efficiency of an interpreter, compiles the entire bytecode and changes it into native code, so re-interpretation is not required.
+JVM can directly run the native code.</li>
+<li>Garbage Collector
+It destroys un-referenced objects.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org218fc63" class="outline-4">
+<h4 id="org218fc63"><span class="section-number-4">2.3.4.</span> JNI(Java Native Interface)</h4>
+<div class="outline-text-4" id="text-2-3-4">
+<p>
+It interacts with the <a href="https://www.ibm.com/docs/en/i/7.2?topic=languages-native-methods-java-native-interface">Native Method</a> Libraries and provides the native libraries(C, C++) required for execution.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc8564f9" class="outline-3">
+<h3 id="orgc8564f9"><span class="section-number-3">2.4.</span> Execution of Java</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Java is platform-independent but JVM is platform dependent.
+</p>
+<p>
+<a href="https://media.geeksforgeeks.org/wp-content/uploads/java-platform-independent.png">Execution of Java</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org64dc858" class="outline-2">
+<h2 id="org64dc858"><span class="section-number-2">3.</span> Basics</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgf428d72" class="outline-3">
+<h3 id="orgf428d72"><span class="section-number-3">3.1.</span> Data Types</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<a href="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105111644/Data-types-in-Java.jpg">Data Types</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org97322d6" class="outline-3">
+<h3 id="org97322d6"><span class="section-number-3">3.2.</span> Primitive Data Type vs Object Data Type</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Primitive Data Type
+Predefined data types</li>
+<li>Object Data Type
+Non-primitive or reference data type, user-defined data type</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Properties</td>
+<td class="org-left">Primitive Data Types</td>
+<td class="org-left">Object Data Types</td>
+</tr>
+
+<tr>
+<td class="org-left">Origin</td>
+<td class="org-left">Pre-defined</td>
+<td class="org-left">User-defined</td>
+</tr>
+
+<tr>
+<td class="org-left">Stored Position</td>
+<td class="org-left">Stack</td>
+<td class="org-left">Reference variables are stored in Stack and the original objects are stored Heap</td>
+</tr>
+
+<tr>
+<td class="org-left">When copied</td>
+<td class="org-left">Different positions</td>
+<td class="org-left">Two reference variables are created but are pointing to the same object</td>
+</tr>
+
+<tr>
+<td class="org-left">Default value</td>
+<td class="org-left">No default value</td>
+<td class="org-left">null</td>
+</tr>
+
+<tr>
+<td class="org-left">Example</td>
+<td class="org-left">byte, short, etc.</td>
+<td class="org-left">Array, String, Class, Interface</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org84dfe94" class="outline-3">
+<h3 id="org84dfe94"><span class="section-number-3">3.3.</span> Variables</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>There are three types of variables:
+<ul class="org-ul">
+<li>Local Variables
+defined within a block or method</li>
+<li>Instance Variables
+non-static variables and are declared in a class outside any method</li>
+<li>Static Variables
+with static keyword, one copy per class regardless of any objects</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org24eadc6" class="outline-3">
+<h3 id="org24eadc6"><span class="section-number-3">3.4.</span> Wrapper Classes</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Why do we need Wrapper Class?
+<ol class="org-ol">
+<li>Converting primitive data types into objects</li>
+<li>Classes in java.util packages handles only objects</li>
+<li>Data Structures in Collection Framework(ArrayList, Vector) only stores objects, not primitive types</li>
+<li>Object is needed to support synchronization in multithreading</li>
+</ol></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">display</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">Integer</span> <span style="color: #383a42;">i</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        i = <span style="color: #8a3b3c; font-weight: bold;">10</span>;
+    <span style="color: #a626a4;">}</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">Integer</span> <span style="color: #383a42;">i</span> = <span style="color: #8a3b3c; font-weight: bold;">5</span>;
+        display<span style="color: #556b2f;">(</span>i<span style="color: #556b2f;">)</span>;
+        System.out.println<span style="color: #556b2f;">(</span>i<span style="color: #556b2f;">)</span>;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+<p>
+When <code>display()</code> is called, it actually create another object by <code class="src src-java"><span style="font-weight: bold;">Integer</span> <span style="color: #383a42;">i</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">Integer</span><span style="color: #014980;">(</span><span style="color: #8a3b3c; font-weight: bold;">5</span><span style="color: #014980;">)</span>;</code>.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org71c3446" class="outline-2">
+<h2 id="org71c3446"><span class="section-number-2">4.</span> I/O</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org9a7eb68" class="outline-3">
+<h3 id="org9a7eb68"><span class="section-number-3">4.1.</span> Input</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+There are two kinds of Input:
+</p>
+<ol class="org-ol">
+<li>BufferReader</li>
+<li>Scanner</li>
+</ol>
+</div>
+<div id="outline-container-org1d46c24" class="outline-4">
+<h4 id="org1d46c24"><span class="section-number-4">4.1.1.</span> BufferedReader</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+<code>throws IOException</code>
+It is used to read a sequence of characters, with some functions:
+</p>
+<ol class="org-ol">
+<li>read a character</li>
+<li>read an array of characters</li>
+<li>read a line</li>
+</ol>
+<p>
+<code>InputStreamReader()</code> is a function that converts the input stream of bytes into a stream of characters so that it can be read by BufferedReader.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">BufferedReader</span> <span style="color: #383a42;">br</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">BufferedReader</span><span style="color: #014980;">(</span><span style="font-weight: bold;">new</span> <span style="font-weight: bold;">InputStreamReader</span><span style="color: #a626a4;">(</span>System.in<span style="color: #a626a4;">)</span><span style="color: #014980;">)</span>;
+<span style="font-weight: bold;">String</span> <span style="color: #383a42;">str</span> = br.readline<span style="color: #014980;">()</span>;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb782735" class="outline-4">
+<h4 id="orgb782735"><span class="section-number-4">4.1.2.</span> Scanner</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+Scanner is an advanced version of BufferedReader.
+It can read formatted input by using regex internally.
+<code>no throw exception</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">Scanner</span> <span style="color: #383a42;">scn</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">Scanner</span><span style="color: #014980;">(</span>System.in<span style="color: #014980;">)</span>;
+<span style="font-weight: bold;">String</span> <span style="color: #383a42;">str</span> = scn.nextLine<span style="color: #014980;">()</span>;
+<span style="font-weight: bold;">int</span> <span style="color: #383a42;">integerNum</span> = scn.nextInt<span style="color: #014980;">()</span>;
+<span style="font-weight: bold;">float</span> <span style="color: #383a42;">floatNum</span> = scn.nextFloat<span style="color: #014980;">()</span>;
+
+<span style="font-weight: bold;">String</span> <span style="color: #383a42;">token</span> = scn.next<span style="color: #014980;">()</span>; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">return the next token/word in the input as a string</span>
+<span style="font-weight: bold;">while</span> <span style="color: #014980;">(</span>scn.hasNextInt<span style="color: #a626a4;">()</span><span style="color: #014980;">)</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">num</span> = scn.nextInt<span style="color: #a626a4;">()</span>;
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5f320d2" class="outline-4">
+<h4 id="org5f320d2"><span class="section-number-4">4.1.3.</span> Difference between BufferedReader and Scanner</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">BufferedReader</td>
+<td class="org-left">Scanner</td>
+</tr>
+
+<tr>
+<td class="org-left">Synchronous(used in multithreading)</td>
+<td class="org-left">Asynchronous</td>
+</tr>
+
+<tr>
+<td class="org-left">Larger buffer memory(8KB)</td>
+<td class="org-left">Smaller(1KB)</td>
+</tr>
+
+<tr>
+<td class="org-left">Faster</td>
+<td class="org-left">Slower</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org6db1ca0" class="outline-3">
+<h3 id="org6db1ca0"><span class="section-number-3">4.2.</span> Output</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+There are two kinds of output:
+</p>
+<ol class="org-ol">
+<li><code>println</code> is a synchronized method, multithreading will lead to low-performance issue</li>
+<li><code>PrintStream</code> can be faster</li>
+</ol>
+</div>
+<div id="outline-container-org849a491" class="outline-4">
+<h4 id="org849a491"><span class="section-number-4">4.2.1.</span> Formatted output</h4>
+<div class="outline-text-4" id="text-4-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org4acecd9"></a>printf<br />
+<div class="outline-text-5" id="text-4-2-1-1">
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        System.out.printf<span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"%d\n"</span>, <span style="color: #8a3b3c; font-weight: bold;">100</span><span style="color: #556b2f;">)</span>;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgb781519"></a>DecimalFormat<br />
+<div class="outline-text-5" id="text-4-2-1-2">
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">import</span> <span style="color: #383a42;">java</span>.<span style="color: #383a42;">text</span>.<span style="font-weight: bold;">DecimalFormat</span>;
+<span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">double</span> <span style="color: #383a42;">num</span> = <span style="color: #8a3b3c; font-weight: bold;">123.4567</span>;
+        <span style="font-weight: bold;">DecimalFormat</span> <span style="color: #383a42;">df</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">DecimalFormat</span><span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"####"</span><span style="color: #556b2f;">)</span>;
+        System.out.println<span style="color: #556b2f;">(</span>df.format<span style="color: #b751b6;">(</span>num<span style="color: #b751b6;">)</span><span style="color: #556b2f;">)</span>;
+        df = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">DecimalFormat</span><span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"#.##"</span><span style="color: #556b2f;">)</span>;
+        System.out.println<span style="color: #556b2f;">(</span>df.format<span style="color: #b751b6;">(</span>num<span style="color: #b751b6;">)</span><span style="color: #556b2f;">)</span>;
+        df = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">DecimalFormat</span><span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"#.000000"</span><span style="color: #556b2f;">)</span>;
+        System.out.println<span style="color: #556b2f;">(</span>df.format<span style="color: #b751b6;">(</span>num<span style="color: #b751b6;">)</span><span style="color: #556b2f;">)</span>;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org30b3e0f"></a>SimpleDateFormat<br />
+<div class="outline-text-5" id="text-4-2-1-3">
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">import</span> <span style="color: #383a42;">java</span>.<span style="color: #383a42;">text</span>.<span style="font-weight: bold;">ParseException</span>;
+<span style="font-weight: bold;">import</span> <span style="color: #383a42;">java</span>.<span style="color: #383a42;">text</span>.<span style="font-weight: bold;">SimpleDateFormat</span>;
+<span style="font-weight: bold;">import</span> <span style="color: #383a42;">java</span>.<span style="color: #383a42;">util</span>.<span style="font-weight: bold;">Date</span>;
+<span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">SimpleDateFormat</span> <span style="color: #383a42;">sdf</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">SimpleDateFormat</span><span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"dd-MM-yyyy"</span><span style="color: #556b2f;">)</span>;
+        <span style="font-weight: bold;">String</span> <span style="color: #383a42;">str</span> = sdf.format<span style="color: #556b2f;">(</span><span style="font-weight: bold;">new</span> <span style="font-weight: bold;">Date</span><span style="color: #b751b6;">()</span><span style="color: #556b2f;">)</span>;
+        System.out.println<span style="color: #556b2f;">(</span>str<span style="color: #556b2f;">)</span>;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgedcf29e" class="outline-2">
+<h2 id="orgedcf29e"><span class="section-number-2">5.</span> Strings</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org0710345" class="outline-3">
+<h3 id="org0710345"><span class="section-number-3">5.1.</span> Overview</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Strings in Java are Objects that are backed internally by a char array.
+Since arrays are immutable, Strings are immutable as well.
+Whenever a change is made to a String, an entirely new String is created.
+</p>
+
+<p>
+There are two ways to initialize a String object:
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">String</span> <span style="color: #383a42;">str1</span> = <span style="color: #8a3b3c;">"abc"</span>; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">literal, put in String Constant Pool for optimization</span>
+
+        <span style="font-weight: bold;">String</span> <span style="color: #383a42;">str2</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">String</span><span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"abc"</span><span style="color: #556b2f;">)</span>; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">put in heap;</span>
+        <span style="font-weight: bold;">String</span> <span style="color: #383a42;">str3</span> = str2.intern<span style="color: #556b2f;">()</span>; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">use intern to put into String Constant Pool</span>
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org0240c63" class="outline-4">
+<h4 id="org0240c63"><span class="section-number-4">5.1.1.</span> String Constant Pool</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+When we create a String like <code class="src src-java"><span style="font-weight: bold;">String</span> <span style="color: #383a42;">str</span> = <span style="color: #8a3b3c;">"abc"</span>;</code>, JVM will first check the String Constant Pool.
+If the string does not exist, then a new string instance is created and placed in a pool.
+If exist, it will not create a new object but return the reference to it.
+<i>String Constant Pool resides in the main heap area after JDK7 for unlimited space.</i>
+</p>
+</div>
+</div>
+<div id="outline-container-org5daa548" class="outline-4">
+<h4 id="org5daa548"><span class="section-number-4">5.1.2.</span> String is immutable</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<ul class="org-ul">
+<li>Why String is immutable?
+<ol class="org-ol">
+<li>The String Constant Pool cannot be possible if String is mutable.
+If not mutable, it will pose a serious security threat to the application.
+Password is passed in String.
+If mutable, it might be changed.</li>
+<li>Safe for multithreading for its immutableness.</li>
+<li>Immutability gives the security of loading the correct class by ClassLoader.</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org02870dd" class="outline-4">
+<h4 id="org02870dd"><span class="section-number-4">5.1.3.</span> Reference count</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">String</span> <span style="color: #383a42;">s1</span> = <span style="color: #8a3b3c;">"abc"</span>;
+<span style="font-weight: bold;">String</span> <span style="color: #383a42;">s2</span> = s1; <span style="color: #556b2f;">// </span><span style="color: #556b2f;">one more reference count, no more space.</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0c23805" class="outline-3">
+<h3 id="org0c23805"><span class="section-number-3">5.2.</span> String Alternatives</h3>
+<div class="outline-text-3" id="text-5-2">
+</div>
+<div id="outline-container-org5df4f92" class="outline-4">
+<h4 id="org5df4f92"><span class="section-number-4">5.2.1.</span> StringBuffer(Recommended)</h4>
+<div class="outline-text-4" id="text-5-2-1">
+<p>
+StringBuffer is a peer class of String that provides much of the functionality of strings.
+StringBuffer represents growable and writable character sequences.
+<b>Safe for multithreading</b>
+</p>
+</div>
+</div>
+<div id="outline-container-org6dbfba3" class="outline-4">
+<h4 id="org6dbfba3"><span class="section-number-4">5.2.2.</span> StringBuilder</h4>
+<div class="outline-text-4" id="text-5-2-2">
+<p>
+StringBuilder represents a mutable sequence of characters.
+An alternative to String, it creates a mutable sequence of characters.
+<b>Not safe for synchronization</b>
+</p>
+</div>
+</div>
+<div id="outline-container-org48586dd" class="outline-4">
+<h4 id="org48586dd"><span class="section-number-4">5.2.3.</span> StringTokenizer</h4>
+<div class="outline-text-4" id="text-5-2-3">
+<p>
+StringTokenizer is used to break a string into tokens.
+A StringTokenizer object internally maintains a current position within the string to be tokenized.
+A token is returned by taking a substring of the string that was used to create the StringTokenizer object.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">import</span> <span style="color: #383a42;">java</span>.<span style="color: #383a42;">util</span>.<span style="font-weight: bold;">StringTokenizer</span>;
+<span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">StringTokenizer</span> <span style="color: #383a42;">st</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">StringTokenizer</span><span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"Hello World from China."</span><span style="color: #556b2f;">)</span>;
+        System.out.println<span style="color: #556b2f;">(</span>st.countTokens<span style="color: #b751b6;">()</span><span style="color: #556b2f;">)</span>;
+        <span style="font-weight: bold;">int</span> <span style="color: #383a42;">index</span> = <span style="color: #8a3b3c; font-weight: bold;">0</span>;
+        <span style="font-weight: bold;">while</span> <span style="color: #556b2f;">(</span>st.hasMoreTokens<span style="color: #b751b6;">()</span><span style="color: #556b2f;">)</span> <span style="color: #556b2f;">{</span>
+            ++index;
+            System.out.println<span style="color: #b751b6;">(</span><span style="color: #8a3b3c;">"Word "</span> + index + <span style="color: #8a3b3c;">": "</span> + st.nextToken<span style="color: #014980;">()</span><span style="color: #b751b6;">)</span>;
+        <span style="color: #556b2f;">}</span>
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3c0ee80" class="outline-4">
+<h4 id="org3c0ee80"><span class="section-number-4">5.2.4.</span> StringJoiner</h4>
+<div class="outline-text-4" id="text-5-2-4">
+<p>
+StringJoiner is used to construct a sequence of characters seperated by a delimiter and optionally starting with a supplied prefix or ending with a supplied suffix.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org199b67b" class="outline-2">
+<h2 id="org199b67b"><span class="section-number-2">6.</span> Arrays</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgdb5bd47" class="outline-3">
+<h3 id="orgdb5bd47"><span class="section-number-3">6.1.</span> Features of Arrays</h3>
+<div class="outline-text-3" id="text-6-1">
+<ol class="org-ol">
+<li>Arrays are dynamically allocated.</li>
+<li>Arrays are objects. So we can find their length using <i>length</i>.</li>
+<li>Variables in arrays are ordered.</li>
+<li>An array can be used as a static field, local variable or method parameter.</li>
+<li>The direct superclass of an array type is Object.</li>
+<li>Every array type implements the intefaces Cloneable and java.io.Serializable. (See <a href="https://www.geeksforgeeks.org/marker-interface-java/">Marker Interface</a>)</li>
+<li>Arrays support primitive types and object types:
+If it&rsquo;s an array of primitive types, the actual values are stored in the array.
+If it&rsquo;s an array of object types, the references are stored in the array.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org30350aa" class="outline-3">
+<h3 id="org30350aa"><span class="section-number-3">6.2.</span> Utilizing an Array</h3>
+<div class="outline-text-3" id="text-6-2">
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="color: #556b2f;">// </span><span style="color: #556b2f;">initialization</span>
+        <span style="font-weight: bold;">int</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">intArray</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">int</span><span style="color: #556b2f;">[]{</span> <span style="color: #8a3b3c; font-weight: bold;">1</span>, <span style="color: #8a3b3c; font-weight: bold;">2</span>, <span style="color: #8a3b3c; font-weight: bold;">3</span>, <span style="color: #8a3b3c; font-weight: bold;">4</span>, <span style="color: #8a3b3c; font-weight: bold;">5</span> <span style="color: #556b2f;">}</span>;
+        <span style="color: #556b2f;">// </span><span style="color: #556b2f;">multidimensional array</span>
+        <span style="font-weight: bold;">int</span><span style="color: #556b2f;">[][]</span> <span style="color: #383a42;">int2DArray</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">int</span><span style="color: #556b2f;">[][]{</span><span style="color: #b751b6;">{</span><span style="color: #8a3b3c; font-weight: bold;">1</span>, <span style="color: #8a3b3c; font-weight: bold;">2</span><span style="color: #b751b6;">}</span>, <span style="color: #b751b6;">{</span><span style="color: #8a3b3c; font-weight: bold;">3</span>, <span style="color: #8a3b3c; font-weight: bold;">4</span><span style="color: #b751b6;">}</span><span style="color: #556b2f;">}</span>;
+        <span style="color: #556b2f;">// </span><span style="color: #556b2f;">clone of arrays</span>
+        <span style="color: #556b2f;">// </span><span style="color: #556b2f;">"deep copy" for single-dimensional array</span>
+        <span style="font-weight: bold;">int</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">cloneArray</span> = intArray.clone<span style="color: #556b2f;">()</span>;
+        System.out.println<span style="color: #556b2f;">(</span>intArray == cloneArray<span style="color: #556b2f;">)</span>;
+        <span style="font-weight: bold;">int</span><span style="color: #556b2f;">[][]</span> <span style="color: #383a42;">clone2DArray</span> = int2DArray.clone<span style="color: #556b2f;">()</span>;
+        System.out.println<span style="color: #556b2f;">(</span>int2DArray<span style="color: #b751b6;">[</span><span style="color: #8a3b3c; font-weight: bold;">0</span><span style="color: #b751b6;">]</span> == clone2DArray<span style="color: #b751b6;">[</span><span style="color: #8a3b3c; font-weight: bold;">0</span><span style="color: #b751b6;">]</span><span style="color: #556b2f;">)</span>;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Caihao Hu</p>
+<p class="date">Created: 2022-05-17 Tue 00:18</p>
+</div>
+</body>
+</html>
