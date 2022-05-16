@@ -1,0 +1,8 @@
+#+title: Readme
+#+author: Bondsam
+
+In this Github Page, I will write some notes.
+
++ Currently covering:
+  1. Hadoop
+  2. Java Language
