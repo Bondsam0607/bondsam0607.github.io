@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-24 Tue 23:19 -->
+<!-- 2022-06-03 Fri 22:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Java</title>
@@ -24,137 +24,191 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orged647b3">1. RoadMap</a>
+<li><a href="#orgc04bccc">1. RoadMap</a>
 <ul>
-<li><a href="#org26b9a0b">1.1. <span class="done DONE">DONE</span> Day1 <code>[3/3]</code></a></li>
-<li><a href="#org5779d56">1.2. <span class="done DONE">DONE</span> Day2 <code>[2/2]</code></a></li>
-<li><a href="#org0536ea8">1.3. <span class="done DONE">DONE</span> Day3 <code>[1/1]</code></a></li>
-<li><a href="#org43b4a4a">1.4. <span class="todo TODO">TODO</span> Day4 <code>[0/3]</code></a></li>
-<li><a href="#org9ce27cd">1.5. <span class="todo TODO">TODO</span> Day5 <code>[0/4]</code></a></li>
-<li><a href="#org106fea8">1.6. <span class="todo TODO">TODO</span> Day6 <code>[0/3]</code></a></li>
-<li><a href="#org2aac524">1.7. <span class="todo TODO">TODO</span> Day7 <code>[0/4]</code></a></li>
-<li><a href="#orgb0d86ed">1.8. <span class="todo TODO">TODO</span> Day8 <code>[0/4]</code></a></li>
+<li><a href="#org94899be">1.1. <span class="done DONE">DONE</span> Day1 <code>[3/3]</code></a></li>
+<li><a href="#orge5d2253">1.2. <span class="done DONE">DONE</span> Day2 <code>[2/2]</code></a></li>
+<li><a href="#orga7556b2">1.3. <span class="done DONE">DONE</span> Day3 <code>[1/1]</code></a></li>
+<li><a href="#orgf7012b0">1.4. <span class="done DONE">DONE</span> Day4 <code>[3/3]</code></a></li>
+<li><a href="#orgecddf9e">1.5. <span class="todo TODO">TODO</span> Day5 <code>[0/4]</code></a></li>
+<li><a href="#org1a937b7">1.6. <span class="todo TODO">TODO</span> Day6 <code>[0/3]</code></a></li>
+<li><a href="#org635dcf6">1.7. <span class="todo TODO">TODO</span> Day7 <code>[0/4]</code></a></li>
+<li><a href="#org958c06f">1.8. <span class="todo TODO">TODO</span> Day8 <code>[0/4]</code></a></li>
 </ul>
 </li>
-<li><a href="#orgbf8830f">2. Misc</a>
+<li><a href="#org766884a">2. Misc</a>
 <ul>
-<li><a href="#org963ee4a">2.1. Gradle</a>
+<li><a href="#org817356d">2.1. Gradle</a>
 <ul>
-<li><a href="#org38d36a9">2.1.1. Run the init task</a></li>
-<li><a href="#org2ebce19">2.1.2. File functionality</a></li>
-<li><a href="#org1abe162">2.1.3. Share build logic and configuration between subprojects</a></li>
-<li><a href="#org194fe0c">2.1.4. Run and Build</a></li>
+<li><a href="#orgba9bf84">2.1.1. Run the init task</a></li>
+<li><a href="#org96219f7">2.1.2. File functionality</a></li>
+<li><a href="#org0f3acd9">2.1.3. Share build logic and configuration between subprojects</a></li>
+<li><a href="#org1f167cc">2.1.4. Run and Build</a></li>
 </ul>
 </li>
-<li><a href="#org434f372">2.2. static import</a></li>
+<li><a href="#org0971568">2.2. static import</a></li>
+<li><a href="#orga0a4e70">2.3. Memory Allocation Position of Java</a>
+<ul>
+<li><a href="#org62432fa">2.3.1. Stack Memory</a></li>
+<li><a href="#orgd15feae">2.3.2. Heap Memory</a></li>
+<li><a href="#org20e66bf">2.3.3. Permenant Generation</a></li>
 </ul>
 </li>
-<li><a href="#org6488857">3. Overview</a>
+<li><a href="#orga02174f">2.4. Checked vs Unchecked Exception</a>
 <ul>
-<li><a href="#orge6825f0">3.1. Terminology</a>
-<ul>
-<li><a href="#org3631ce3">3.1.1. Components of JRE</a></li>
-</ul>
-</li>
-<li><a href="#org9a0a1a9">3.2. JAR component</a></li>
-<li><a href="#org2a7a5b4">3.3. JVM Architecture</a>
-<ul>
-<li><a href="#org9eb400d">3.3.1. Class Loader</a></li>
-<li><a href="#org4b99227">3.3.2. JVM memory</a></li>
-<li><a href="#orgb59f7c8">3.3.3. Execution Engine</a></li>
-<li><a href="#org52ea0f1">3.3.4. JNI(Java Native Interface)</a></li>
-</ul>
-</li>
-<li><a href="#orgca61b27">3.4. Execution of Java</a></li>
-</ul>
-</li>
-<li><a href="#orgd61aa2e">4. Basics</a>
-<ul>
-<li><a href="#orgda3a0ad">4.1. Data Types</a></li>
-<li><a href="#orgee9326e">4.2. Primitive Data Type vs Object Data Type</a></li>
-<li><a href="#org0e1a6f6">4.3. Variables</a></li>
-<li><a href="#orga08d7c2">4.4. Wrapper Classes</a></li>
-</ul>
-</li>
-<li><a href="#orgf5d7596">5. I/O</a>
-<ul>
-<li><a href="#org578fade">5.1. Input</a>
-<ul>
-<li><a href="#org77e54aa">5.1.1. BufferedReader</a></li>
-<li><a href="#orgc110dc9">5.1.2. Scanner</a></li>
-<li><a href="#org7819a19">5.1.3. Difference between BufferedReader and Scanner</a></li>
-</ul>
-</li>
-<li><a href="#org7c69acd">5.2. Output</a>
-<ul>
-<li><a href="#org8212c84">5.2.1. Formatted output</a></li>
+<li><a href="#orga1a8f48">2.4.1. Checked Exception</a></li>
+<li><a href="#org390a08b">2.4.2. Unchecked Exception</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org425264f">6. Strings</a>
+<li><a href="#org84ae9d6">3. Overview</a>
 <ul>
-<li><a href="#orgd07f5f7">6.1. Overview</a>
+<li><a href="#orga245fca">3.1. Terminology</a>
 <ul>
-<li><a href="#org0e485ce">6.1.1. String Constant Pool</a></li>
-<li><a href="#orgd8efefd">6.1.2. String is immutable</a></li>
-<li><a href="#org2d85463">6.1.3. Reference count</a></li>
+<li><a href="#org05c56ed">3.1.1. Components of JRE</a></li>
 </ul>
 </li>
-<li><a href="#org09d21a6">6.2. String Alternatives</a>
+<li><a href="#org00b12b6">3.2. JAR component</a></li>
+<li><a href="#orgf2aa76d">3.3. JVM Architecture</a>
 <ul>
-<li><a href="#org4b72274">6.2.1. StringBuffer(Recommended)</a></li>
-<li><a href="#org0dbf718">6.2.2. StringBuilder</a></li>
-<li><a href="#org06690a0">6.2.3. StringTokenizer</a></li>
-<li><a href="#orgcb6f27f">6.2.4. StringJoiner</a></li>
+<li><a href="#org6166ffd">3.3.1. Class Loader</a></li>
+<li><a href="#orgf66232e">3.3.2. JVM memory</a></li>
+<li><a href="#org906ad8a">3.3.3. Execution Engine</a></li>
+<li><a href="#orgdf2810d">3.3.4. JNI(Java Native Interface)</a></li>
+</ul>
+</li>
+<li><a href="#orgc0fbfd4">3.4. Execution of Java</a></li>
+</ul>
+</li>
+<li><a href="#org907f5ce">4. Basics</a>
+<ul>
+<li><a href="#orged870fb">4.1. Data Types</a></li>
+<li><a href="#orgd18341f">4.2. Primitive Data Type vs Object Data Type</a></li>
+<li><a href="#orgdbdb0c3">4.3. Variables</a></li>
+<li><a href="#orga3ffdc4">4.4. Wrapper Classes</a></li>
+</ul>
+</li>
+<li><a href="#org7db63c3">5. I/O</a>
+<ul>
+<li><a href="#orgb7cf6b8">5.1. Input</a>
+<ul>
+<li><a href="#org94cc909">5.1.1. BufferedReader</a></li>
+<li><a href="#org9b0eea2">5.1.2. Scanner</a></li>
+<li><a href="#org2fd9995">5.1.3. Difference between BufferedReader and Scanner</a></li>
+</ul>
+</li>
+<li><a href="#orgcbd8d3d">5.2. Output</a>
+<ul>
+<li><a href="#orgc6216dc">5.2.1. Formatted output</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgbbceaca">7. Arrays</a>
+<li><a href="#org6e74e79">6. Strings</a>
 <ul>
-<li><a href="#org0579fbc">7.1. Features of Arrays</a>
+<li><a href="#org35a99c3">6.1. Overview</a>
 <ul>
-<li><a href="#org424c708">7.1.1. Final Arrays</a></li>
-<li><a href="#org348bbdf">7.1.2. Reflection Array</a></li>
+<li><a href="#orgc8b02da">6.1.1. String Constant Pool</a></li>
+<li><a href="#org12d290f">6.1.2. String is immutable</a></li>
+<li><a href="#org2996b21">6.1.3. Reference count</a></li>
 </ul>
 </li>
-<li><a href="#org59914cf">7.2. Utilizing an Array</a></li>
+<li><a href="#orgf9382df">6.2. String Alternatives</a>
+<ul>
+<li><a href="#org26e94d6">6.2.1. StringBuffer(Recommended)</a></li>
+<li><a href="#org0a61c54">6.2.2. StringBuilder</a></li>
+<li><a href="#org24c75a1">6.2.3. StringTokenizer</a></li>
+<li><a href="#orge98b996">6.2.4. StringJoiner</a></li>
 </ul>
 </li>
-<li><a href="#orgca331fe">8. OOP</a>
-<ul>
-<li><a href="#org3ee032c">8.1. Concepts of OOPs</a></li>
-<li><a href="#org55c0885">8.2. Classes and Objects</a>
-<ul>
-<li><a href="#orga78a7d1">8.2.1. Anonymous Objects</a></li>
 </ul>
 </li>
-<li><a href="#org34db64c">8.3. Interface</a>
+<li><a href="#org10c9357">7. Arrays</a>
 <ul>
-<li><a href="#org8a20786">8.3.1. New features since JDK8</a></li>
+<li><a href="#org357c47d">7.1. Features of Arrays</a>
+<ul>
+<li><a href="#org67d7122">7.1.1. Final Arrays</a></li>
+<li><a href="#org732ec3b">7.1.2. Reflection Array</a></li>
 </ul>
 </li>
-<li><a href="#org46d4507">8.4. Inheritance</a>
-<ul>
-<li><a href="#orgdc08e05">8.4.1. Types of Inheritance</a></li>
-<li><a href="#org86cb6cb">8.4.2. Important Facts</a></li>
-<li><a href="#org3d62e4d">8.4.3. Constructors</a></li>
-<li><a href="#org45e2edb">8.4.4. Multiple Inheritance</a></li>
-<li><a href="#org95b898c">8.4.5. Interfaces and Inheritance</a></li>
-<li><a href="#org9fea42d">8.4.6. Comparison of Inheritance in C++ and Java</a></li>
+<li><a href="#orgb8aaf2a">7.2. Utilizing an Array</a></li>
 </ul>
 </li>
-<li><a href="#orga1809af">8.5. Abstraction</a>
+<li><a href="#orgcb38afe">8. OOP</a>
 <ul>
-<li><a href="#orgca88f3c">8.5.1. Rules for abstraction classes and methods</a></li>
-<li><a href="#orgbc747e6">8.5.2. Control Abstraction and Data Abstraction</a></li>
+<li><a href="#orgf9767ff">8.1. Concepts of OOPs</a></li>
+<li><a href="#orge2dca30">8.2. Classes and Objects</a>
+<ul>
+<li><a href="#org406d7b2">8.2.1. Anonymous Objects</a></li>
 </ul>
 </li>
-<li><a href="#orgbc9cff4">8.6. Encapsulation</a></li>
-<li><a href="#org232484d">8.7. Polymorphism</a>
+<li><a href="#orgc437aab">8.3. Interface</a>
 <ul>
-<li><a href="#org9d2963f">8.7.1. Runtime Polymorphism</a></li>
+<li><a href="#orgb9243a4">8.3.1. New features since JDK8</a></li>
+</ul>
+</li>
+<li><a href="#org96e206f">8.4. Inheritance</a>
+<ul>
+<li><a href="#orgc4f3f17">8.4.1. Types of Inheritance</a></li>
+<li><a href="#org4c9d53a">8.4.2. Important Facts</a></li>
+<li><a href="#org7739ad3">8.4.3. Constructors</a></li>
+<li><a href="#org2217733">8.4.4. Multiple Inheritance</a></li>
+<li><a href="#orgedb8ef1">8.4.5. Interfaces and Inheritance</a></li>
+<li><a href="#orgc6fc2ef">8.4.6. Comparison of Inheritance in C++ and Java</a></li>
+</ul>
+</li>
+<li><a href="#org48296ae">8.5. Abstraction</a>
+<ul>
+<li><a href="#org2f54ae7">8.5.1. Rules for abstraction classes and methods</a></li>
+<li><a href="#org35e1f95">8.5.2. Control Abstraction and Data Abstraction</a></li>
+</ul>
+</li>
+<li><a href="#org088cdfd">8.6. Encapsulation</a></li>
+<li><a href="#org684ba4d">8.7. Polymorphism</a>
+<ul>
+<li><a href="#org196fc81">8.7.1. Runtime Polymorphism</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6e840f7">9. Constructor</a>
+<ul>
+<li><a href="#orgdb66447">9.1. Copy Constructor</a></li>
+<li><a href="#org258843c">9.2. Constructor Chain</a></li>
+<li><a href="#org0cc269d">9.3. Init Block</a></li>
+<li><a href="#org86208a2">9.4. Private Constructor</a></li>
+</ul>
+</li>
+<li><a href="#org7df72be">10. Methods</a>
+<ul>
+<li><a href="#org2744110">10.1. Java is strictly passed by value.</a></li>
+<li><a href="#org5a065ee">10.2. Method Overriding</a>
+<ul>
+<li><a href="#org14057a7">10.2.1. Overriding methods can allow more, but not less access than the overriden methods</a></li>
+<li><a href="#orgc8c46c0">10.2.2. Final methods cannot be overriden</a></li>
+<li><a href="#orgd29234a">10.2.3. static methods cannot be overriden</a></li>
+<li><a href="#orgdfa7d7f">10.2.4. private methods cannot be overriden</a></li>
+<li><a href="#orgd569aa8">10.2.5. The overriding method must have the same return type</a></li>
+<li><a href="#org49c15ea">10.2.6. Invoking overriden method from sub-class</a></li>
+<li><a href="#orgc895548">10.2.7. Overriding and Exception Handling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org57d13a8">11. Interface</a>
+<ul>
+<li><a href="#org5ca77dc">11.1. Inheritance of Interface</a></li>
+<li><a href="#orgd31fb49">11.2. Functional Interfaces</a>
+<ul>
+<li><a href="#orge37b6e1">11.2.1. @FunctionalInterface Annotation</a></li>
+</ul>
+</li>
+<li><a href="#org95db3de">11.3. Marker Interface</a>
+<ul>
+<li><a href="#org6a240a6">11.3.1. Clonable</a></li>
+<li><a href="#orgce4f8de">11.3.2. Serializable</a></li>
+<li><a href="#orgb3fdf6d">11.3.3. Remote</a></li>
 </ul>
 </li>
 </ul>
@@ -163,107 +217,107 @@
 </div>
 </div>
 
-<div id="outline-container-orged647b3" class="outline-2">
-<h2 id="orged647b3"><span class="section-number-2">1.</span> RoadMap</h2>
+<div id="outline-container-orgc04bccc" class="outline-2">
+<h2 id="orgc04bccc"><span class="section-number-2">1.</span> RoadMap</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This RoadMap contains the day-divided workload of learning Java.
 </p>
 </div>
-<div id="outline-container-org26b9a0b" class="outline-3">
-<h3 id="org26b9a0b"><span class="section-number-3">1.1.</span> <span class="done DONE">DONE</span> Day1 <code>[3/3]</code></h3>
+<div id="outline-container-org94899be" class="outline-3">
+<h3 id="org94899be"><span class="section-number-3">1.1.</span> <span class="done DONE">DONE</span> Day1 <code>[3/3]</code></h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li class="on"><code>[X]</code> <a href="#org6488857">Overview</a></li>
-<li class="on"><code>[X]</code> <a href="#orgd61aa2e">Basics</a></li>
-<li class="on"><code>[X]</code> <a href="#orgf5d7596">I/O</a></li>
+<li class="on"><code>[X]</code> <a href="#org84ae9d6">Overview</a></li>
+<li class="on"><code>[X]</code> <a href="#org907f5ce">Basics</a></li>
+<li class="on"><code>[X]</code> <a href="#org7db63c3">I/O</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5779d56" class="outline-3">
-<h3 id="org5779d56"><span class="section-number-3">1.2.</span> <span class="done DONE">DONE</span> Day2 <code>[2/2]</code></h3>
+<div id="outline-container-orge5d2253" class="outline-3">
+<h3 id="orge5d2253"><span class="section-number-3">1.2.</span> <span class="done DONE">DONE</span> Day2 <code>[2/2]</code></h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li class="on"><code>[X]</code> <a href="#org425264f">Strings</a></li>
-<li class="on"><code>[X]</code> <a href="#orgbbceaca">Arrays</a></li>
+<li class="on"><code>[X]</code> <a href="#org6e74e79">Strings</a></li>
+<li class="on"><code>[X]</code> <a href="#org10c9357">Arrays</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0536ea8" class="outline-3">
-<h3 id="org0536ea8"><span class="section-number-3">1.3.</span> <span class="done DONE">DONE</span> Day3 <code>[1/1]</code></h3>
+<div id="outline-container-orga7556b2" class="outline-3">
+<h3 id="orga7556b2"><span class="section-number-3">1.3.</span> <span class="done DONE">DONE</span> Day3 <code>[1/1]</code></h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 DEADLINE:<span class="timestamp-wrapper"><span class="timestamp">&lt;2022-05-23 Mon&gt;</span></span>
 </p>
 <ul class="org-ul">
-<li class="on"><code>[X]</code> <a href="#orgca331fe">OOP</a></li>
+<li class="on"><code>[X]</code> <a href="#orgcb38afe">OOP</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org43b4a4a" class="outline-3">
-<h3 id="org43b4a4a"><span class="section-number-3">1.4.</span> <span class="todo TODO">TODO</span> Day4 <code>[0/3]</code></h3>
+<div id="outline-container-orgf7012b0" class="outline-3">
+<h3 id="orgf7012b0"><span class="section-number-3">1.4.</span> <span class="done DONE">DONE</span> Day4 <code>[3/3]</code></h3>
 <div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> Constructor</li>
-<li class="off"><code>[&#xa0;]</code> Methods</li>
-<li class="off"><code>[&#xa0;]</code> Interface</li>
+<li class="on"><code>[X]</code> <a href="#org6e840f7">Constructor</a></li>
+<li class="on"><code>[X]</code> <a href="#org7df72be">Methods</a></li>
+<li class="on"><code>[X]</code> <a href="#orgc437aab">Interface</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9ce27cd" class="outline-3">
-<h3 id="org9ce27cd"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> Day5 <code>[0/4]</code></h3>
+<div id="outline-container-orgecddf9e" class="outline-3">
+<h3 id="orgecddf9e"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> Day5 <code>[0/4]</code></h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> wrapper classes</li>
-<li class="off"><code>[&#xa0;]</code> keywords</li>
-<li class="off"><code>[&#xa0;]</code> access modifiers</li>
-<li class="off"><code>[&#xa0;]</code> memory allocation</li>
+<li class="off"><code>[&#xa0;]</code> Wrapper Classes</li>
+<li class="off"><code>[&#xa0;]</code> Keywords</li>
+<li class="off"><code>[&#xa0;]</code> Access Modifiers</li>
+<li class="off"><code>[&#xa0;]</code> Memory Allocation</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org106fea8" class="outline-3">
-<h3 id="org106fea8"><span class="section-number-3">1.6.</span> <span class="todo TODO">TODO</span> Day6 <code>[0/3]</code></h3>
+<div id="outline-container-org1a937b7" class="outline-3">
+<h3 id="org1a937b7"><span class="section-number-3">1.6.</span> <span class="todo TODO">TODO</span> Day6 <code>[0/3]</code></h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> classes</li>
-<li class="off"><code>[&#xa0;]</code> packages</li>
-<li class="off"><code>[&#xa0;]</code> collection framework</li>
+<li class="off"><code>[&#xa0;]</code> Classes</li>
+<li class="off"><code>[&#xa0;]</code> Packages</li>
+<li class="off"><code>[&#xa0;]</code> Collection Framework</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2aac524" class="outline-3">
-<h3 id="org2aac524"><span class="section-number-3">1.7.</span> <span class="todo TODO">TODO</span> Day7 <code>[0/4]</code></h3>
+<div id="outline-container-org635dcf6" class="outline-3">
+<h3 id="org635dcf6"><span class="section-number-3">1.7.</span> <span class="todo TODO">TODO</span> Day7 <code>[0/4]</code></h3>
 <div class="outline-text-3" id="text-1-7">
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> list</li>
-<li class="off"><code>[&#xa0;]</code> queue</li>
-<li class="off"><code>[&#xa0;]</code> map</li>
-<li class="off"><code>[&#xa0;]</code> set</li>
+<li class="off"><code>[&#xa0;]</code> List</li>
+<li class="off"><code>[&#xa0;]</code> Queue</li>
+<li class="off"><code>[&#xa0;]</code> Map</li>
+<li class="off"><code>[&#xa0;]</code> Set</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb0d86ed" class="outline-3">
-<h3 id="orgb0d86ed"><span class="section-number-3">1.8.</span> <span class="todo TODO">TODO</span> Day8 <code>[0/4]</code></h3>
+<div id="outline-container-org958c06f" class="outline-3">
+<h3 id="org958c06f"><span class="section-number-3">1.8.</span> <span class="todo TODO">TODO</span> Day8 <code>[0/4]</code></h3>
 <div class="outline-text-3" id="text-1-8">
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> exception handler</li>
-<li class="off"><code>[&#xa0;]</code> multi-threading</li>
-<li class="off"><code>[&#xa0;]</code> synchronization</li>
-<li class="off"><code>[&#xa0;]</code> file handling</li>
+<li class="off"><code>[&#xa0;]</code> Exception Handler</li>
+<li class="off"><code>[&#xa0;]</code> Multi-threading</li>
+<li class="off"><code>[&#xa0;]</code> Synchronization</li>
+<li class="off"><code>[&#xa0;]</code> File Handling</li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbf8830f" class="outline-2">
-<h2 id="orgbf8830f"><span class="section-number-2">2.</span> Misc</h2>
+<div id="outline-container-org766884a" class="outline-2">
+<h2 id="org766884a"><span class="section-number-2">2.</span> Misc</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org963ee4a" class="outline-3">
-<h3 id="org963ee4a"><span class="section-number-3">2.1.</span> Gradle</h3>
+<div id="outline-container-org817356d" class="outline-3">
+<h3 id="org817356d"><span class="section-number-3">2.1.</span> Gradle</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org38d36a9" class="outline-4">
-<h4 id="org38d36a9"><span class="section-number-4">2.1.1.</span> Run the init task</h4>
+<div id="outline-container-orgba9bf84" class="outline-4">
+<h4 id="orgba9bf84"><span class="section-number-4">2.1.1.</span> Run the init task</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 What is the difference between &ldquo;basic&rdquo;, &ldquo;application&rdquo;, &ldquo;library&rdquo;, &ldquo;Gradle plugin&rdquo;?
@@ -275,8 +329,8 @@ What is the difference between &ldquo;basic&rdquo;, &ldquo;application&rdquo;, &
 </ul>
 </div>
 </div>
-<div id="outline-container-org2ebce19" class="outline-4">
-<h4 id="org2ebce19"><span class="section-number-4">2.1.2.</span> File functionality</h4>
+<div id="outline-container-org96219f7" class="outline-4">
+<h4 id="org96219f7"><span class="section-number-4">2.1.2.</span> File functionality</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 <code>gradle</code>: dir, folder for wrapper files
@@ -287,16 +341,16 @@ What is the difference between &ldquo;basic&rdquo;, &ldquo;application&rdquo;, &
 </p>
 </div>
 </div>
-<div id="outline-container-org1abe162" class="outline-4">
-<h4 id="org1abe162"><span class="section-number-4">2.1.3.</span> Share build logic and configuration between subprojects</h4>
+<div id="outline-container-org0f3acd9" class="outline-4">
+<h4 id="org0f3acd9"><span class="section-number-4">2.1.3.</span> Share build logic and configuration between subprojects</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <p>
 modify <i>convention plugins</i> located in the <code>buildSrc</code> folder
 </p>
 </div>
 </div>
-<div id="outline-container-org194fe0c" class="outline-4">
-<h4 id="org194fe0c"><span class="section-number-4">2.1.4.</span> Run and Build</h4>
+<div id="outline-container-org1f167cc" class="outline-4">
+<h4 id="org1f167cc"><span class="section-number-4">2.1.4.</span> Run and Build</h4>
 <div class="outline-text-4" id="text-2-1-4">
 <p>
 <code>./gradlew run</code> tells Gradle to execute the main method in the class assigned to the mainClass property
@@ -305,8 +359,8 @@ modify <i>convention plugins</i> located in the <code>buildSrc</code> folder
 </div>
 </div>
 </div>
-<div id="outline-container-org434f372" class="outline-3">
-<h3 id="org434f372"><span class="section-number-3">2.2.</span> static import</h3>
+<div id="outline-container-org0971568" class="outline-3">
+<h3 id="org0971568"><span class="section-number-3">2.2.</span> static import</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 By <code>import static</code>, we can access the static members of a class directly.
@@ -314,13 +368,71 @@ But it might cause confusion, better not to use it.
 </p>
 </div>
 </div>
+<div id="outline-container-orga0a4e70" class="outline-3">
+<h3 id="orga0a4e70"><span class="section-number-3">2.3.</span> Memory Allocation Position of Java</h3>
+<div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-org6488857" class="outline-2">
-<h2 id="org6488857"><span class="section-number-2">3.</span> Overview</h2>
+<div id="outline-container-org62432fa" class="outline-4">
+<h4 id="org62432fa"><span class="section-number-4">2.3.1.</span> Stack Memory</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Store only the small datatypes, e.g. references, variable names, primitive types, parameters, local variables, and return values
+</p>
+</div>
+</div>
+<div id="outline-container-orgd15feae" class="outline-4">
+<h4 id="orgd15feae"><span class="section-number-4">2.3.2.</span> Heap Memory</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+Store all the instances of the classes
+</p>
+</div>
+</div>
+<div id="outline-container-org20e66bf" class="outline-4">
+<h4 id="org20e66bf"><span class="section-number-4">2.3.3.</span> Permenant Generation</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<p>
+Store static methods and variables
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga02174f" class="outline-3">
+<h3 id="orga02174f"><span class="section-number-3">2.4.</span> Checked vs Unchecked Exception</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+<a href="https://media.geeksforgeeks.org/wp-content/uploads/Exception-in-java1.png">Checked vs Unchecked Exception</a>
+</p>
+</div>
+<div id="outline-container-orga1a8f48" class="outline-4">
+<h4 id="orga1a8f48"><span class="section-number-4">2.4.1.</span> Checked Exception</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+These are the exceptions that are checked at <b>compile time</b>.
+If some code within a method throws a checked exception, then the method must either handle the exception or it must specify using <code>throws</code> keyword.
+For example, FileReader()
+</p>
+</div>
+</div>
+<div id="outline-container-org390a08b" class="outline-4">
+<h4 id="org390a08b"><span class="section-number-4">2.4.2.</span> Unchecked Exception</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<p>
+These are the exceptions that are not checked at compile time.
+In C++, all exceptions are unchecked.
+In Java, exceptions under Error and RuntimeException classes are unchecked exceptions.
+For example, ArithmeticException
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org84ae9d6" class="outline-2">
+<h2 id="org84ae9d6"><span class="section-number-2">3.</span> Overview</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orge6825f0" class="outline-3">
-<h3 id="orge6825f0"><span class="section-number-3">3.1.</span> Terminology</h3>
+<div id="outline-container-orga245fca" class="outline-3">
+<h3 id="orga245fca"><span class="section-number-3">3.1.</span> Terminology</h3>
 <div class="outline-text-3" id="text-3-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -358,8 +470,8 @@ But it might cause confusion, better not to use it.
 </p>
 </div>
 
-<div id="outline-container-org3631ce3" class="outline-4">
-<h4 id="org3631ce3"><span class="section-number-4">3.1.1.</span> Components of JRE</h4>
+<div id="outline-container-org05c56ed" class="outline-4">
+<h4 id="org05c56ed"><span class="section-number-4">3.1.1.</span> Components of JRE</h4>
 <div class="outline-text-4" id="text-3-1-1">
 <ol class="org-ol">
 <li>Deployment technologies
@@ -406,8 +518,8 @@ But it might cause confusion, better not to use it.
 </div>
 </div>
 
-<div id="outline-container-org9a0a1a9" class="outline-3">
-<h3 id="org9a0a1a9"><span class="section-number-3">3.2.</span> JAR component</h3>
+<div id="outline-container-org00b12b6" class="outline-3">
+<h3 id="org00b12b6"><span class="section-number-3">3.2.</span> JAR component</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 JAR is part of JDK, a full pack of Java classes.
@@ -421,15 +533,15 @@ java -cp Hello.jar hello_world
 </div>
 </div>
 </div>
-<div id="outline-container-org2a7a5b4" class="outline-3">
-<h3 id="org2a7a5b4"><span class="section-number-3">3.3.</span> JVM Architecture</h3>
+<div id="outline-container-orgf2aa76d" class="outline-3">
+<h3 id="orgf2aa76d"><span class="section-number-3">3.3.</span> JVM Architecture</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 <a href="https://media.geeksforgeeks.org/wp-content/uploads/jvm-3.jpg">JVM Architecture</a>
 </p>
 </div>
-<div id="outline-container-org9eb400d" class="outline-4">
-<h4 id="org9eb400d"><span class="section-number-4">3.3.1.</span> Class Loader</h4>
+<div id="outline-container-org6166ffd" class="outline-4">
+<h4 id="org6166ffd"><span class="section-number-4">3.3.1.</span> Class Loader</h4>
 <div class="outline-text-4" id="text-3-3-1">
 <ul class="org-ul">
 <li>There are three phases of class loader:
@@ -441,7 +553,7 @@ java -cp Hello.jar hello_world
 </ul>
 </div>
 <ol class="org-ol">
-<li><a id="orgad7bdd0"></a>Loading<br />
+<li><a id="orgd7f28c1"></a>Loading<br />
 <div class="outline-text-5" id="text-3-3-1-1">
 <p>
 In this phase, class loader reads the .class file, generate the corresponding binary data and save it in the <b>method area</b>.
@@ -492,7 +604,7 @@ After loading .class file, JVM creates an object of type Class(stores info about
 </div>
 </div>
 </li>
-<li><a id="org69dbdd8"></a>Linking<br />
+<li><a id="org5983b0c"></a>Linking<br />
 <div class="outline-text-5" id="text-3-3-1-2">
 <ul class="org-ul">
 <li>In this phase, class loader performs three actions:
@@ -508,7 +620,7 @@ replacing references.</li>
 </ul>
 </div>
 </li>
-<li><a id="org0bced2b"></a>Initialization<br />
+<li><a id="org81983d3"></a>Initialization<br />
 <div class="outline-text-5" id="text-3-3-1-3">
 <p>
 All static variables are assigned with their values defined in the code and static block.
@@ -529,8 +641,8 @@ It is a child of the extension class loader(e.g. user-defined class), loading cl
 </ol>
 </div>
 
-<div id="outline-container-org4b99227" class="outline-4">
-<h4 id="org4b99227"><span class="section-number-4">3.3.2.</span> JVM memory</h4>
+<div id="outline-container-orgf66232e" class="outline-4">
+<h4 id="orgf66232e"><span class="section-number-4">3.3.2.</span> JVM memory</h4>
 <div class="outline-text-4" id="text-3-3-2">
 <ul class="org-ul">
 <li>JVM memory contains:
@@ -550,8 +662,8 @@ per-thread, storing native method information</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb59f7c8" class="outline-4">
-<h4 id="orgb59f7c8"><span class="section-number-4">3.3.3.</span> Execution Engine</h4>
+<div id="outline-container-org906ad8a" class="outline-4">
+<h4 id="org906ad8a"><span class="section-number-4">3.3.3.</span> Execution Engine</h4>
 <div class="outline-text-4" id="text-3-3-3">
 <ul class="org-ul">
 <li>Execution process:
@@ -574,8 +686,8 @@ It destroys un-referenced objects.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org52ea0f1" class="outline-4">
-<h4 id="org52ea0f1"><span class="section-number-4">3.3.4.</span> JNI(Java Native Interface)</h4>
+<div id="outline-container-orgdf2810d" class="outline-4">
+<h4 id="orgdf2810d"><span class="section-number-4">3.3.4.</span> JNI(Java Native Interface)</h4>
 <div class="outline-text-4" id="text-3-3-4">
 <p>
 It interacts with the <a href="https://www.ibm.com/docs/en/i/7.2?topic=languages-native-methods-java-native-interface">Native Method</a> Libraries and provides the native libraries(C, C++) required for execution.
@@ -583,8 +695,8 @@ It interacts with the <a href="https://www.ibm.com/docs/en/i/7.2?topic=languages
 </div>
 </div>
 </div>
-<div id="outline-container-orgca61b27" class="outline-3">
-<h3 id="orgca61b27"><span class="section-number-3">3.4.</span> Execution of Java</h3>
+<div id="outline-container-orgc0fbfd4" class="outline-3">
+<h3 id="orgc0fbfd4"><span class="section-number-3">3.4.</span> Execution of Java</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 Java is platform-independent but JVM is platform dependent.
@@ -595,20 +707,20 @@ Java is platform-independent but JVM is platform dependent.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd61aa2e" class="outline-2">
-<h2 id="orgd61aa2e"><span class="section-number-2">4.</span> Basics</h2>
+<div id="outline-container-org907f5ce" class="outline-2">
+<h2 id="org907f5ce"><span class="section-number-2">4.</span> Basics</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgda3a0ad" class="outline-3">
-<h3 id="orgda3a0ad"><span class="section-number-3">4.1.</span> Data Types</h3>
+<div id="outline-container-orged870fb" class="outline-3">
+<h3 id="orged870fb"><span class="section-number-3">4.1.</span> Data Types</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 <a href="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105111644/Data-types-in-Java.jpg">Data Types</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgee9326e" class="outline-3">
-<h3 id="orgee9326e"><span class="section-number-3">4.2.</span> Primitive Data Type vs Object Data Type</h3>
+<div id="outline-container-orgd18341f" class="outline-3">
+<h3 id="orgd18341f"><span class="section-number-3">4.2.</span> Primitive Data Type vs Object Data Type</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>Primitive Data Type
@@ -666,8 +778,8 @@ Non-primitive or reference data type, user-defined data type</li>
 </table>
 </div>
 </div>
-<div id="outline-container-org0e1a6f6" class="outline-3">
-<h3 id="org0e1a6f6"><span class="section-number-3">4.3.</span> Variables</h3>
+<div id="outline-container-orgdbdb0c3" class="outline-3">
+<h3 id="orgdbdb0c3"><span class="section-number-3">4.3.</span> Variables</h3>
 <div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li>There are three types of variables:
@@ -682,8 +794,8 @@ with static keyword, one copy per class regardless of any objects</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga08d7c2" class="outline-3">
-<h3 id="orga08d7c2"><span class="section-number-3">4.4.</span> Wrapper Classes</h3>
+<div id="outline-container-orga3ffdc4" class="outline-3">
+<h3 id="orga3ffdc4"><span class="section-number-3">4.4.</span> Wrapper Classes</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li>Why do we need Wrapper Class?
@@ -713,12 +825,12 @@ When <code>display()</code> is called, it actually create another object by <cod
 </div>
 </div>
 </div>
-<div id="outline-container-orgf5d7596" class="outline-2">
-<h2 id="orgf5d7596"><span class="section-number-2">5.</span> I/O</h2>
+<div id="outline-container-org7db63c3" class="outline-2">
+<h2 id="org7db63c3"><span class="section-number-2">5.</span> I/O</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org578fade" class="outline-3">
-<h3 id="org578fade"><span class="section-number-3">5.1.</span> Input</h3>
+<div id="outline-container-orgb7cf6b8" class="outline-3">
+<h3 id="orgb7cf6b8"><span class="section-number-3">5.1.</span> Input</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 There are two kinds of Input:
@@ -728,8 +840,8 @@ There are two kinds of Input:
 <li>Scanner</li>
 </ol>
 </div>
-<div id="outline-container-org77e54aa" class="outline-4">
-<h4 id="org77e54aa"><span class="section-number-4">5.1.1.</span> BufferedReader</h4>
+<div id="outline-container-org94cc909" class="outline-4">
+<h4 id="org94cc909"><span class="section-number-4">5.1.1.</span> BufferedReader</h4>
 <div class="outline-text-4" id="text-5-1-1">
 <p>
 <code>throws IOException</code>
@@ -750,8 +862,8 @@ It is used to read a sequence of characters, with some functions:
 </div>
 </div>
 </div>
-<div id="outline-container-orgc110dc9" class="outline-4">
-<h4 id="orgc110dc9"><span class="section-number-4">5.1.2.</span> Scanner</h4>
+<div id="outline-container-org9b0eea2" class="outline-4">
+<h4 id="org9b0eea2"><span class="section-number-4">5.1.2.</span> Scanner</h4>
 <div class="outline-text-4" id="text-5-1-2">
 <p>
 Scanner is an advanced version of BufferedReader.
@@ -772,8 +884,8 @@ It can read formatted input by using regex internally.
 </div>
 </div>
 </div>
-<div id="outline-container-org7819a19" class="outline-4">
-<h4 id="org7819a19"><span class="section-number-4">5.1.3.</span> Difference between BufferedReader and Scanner</h4>
+<div id="outline-container-org2fd9995" class="outline-4">
+<h4 id="org2fd9995"><span class="section-number-4">5.1.3.</span> Difference between BufferedReader and Scanner</h4>
 <div class="outline-text-4" id="text-5-1-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -808,8 +920,8 @@ It can read formatted input by using regex internally.
 </div>
 </div>
 </div>
-<div id="outline-container-org7c69acd" class="outline-3">
-<h3 id="org7c69acd"><span class="section-number-3">5.2.</span> Output</h3>
+<div id="outline-container-orgcbd8d3d" class="outline-3">
+<h3 id="orgcbd8d3d"><span class="section-number-3">5.2.</span> Output</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 There are two kinds of output:
@@ -819,12 +931,12 @@ There are two kinds of output:
 <li><code>PrintStream</code> can be faster</li>
 </ol>
 </div>
-<div id="outline-container-org8212c84" class="outline-4">
-<h4 id="org8212c84"><span class="section-number-4">5.2.1.</span> Formatted output</h4>
+<div id="outline-container-orgc6216dc" class="outline-4">
+<h4 id="orgc6216dc"><span class="section-number-4">5.2.1.</span> Formatted output</h4>
 <div class="outline-text-4" id="text-5-2-1">
 </div>
 <ol class="org-ol">
-<li><a id="org8b7e29f"></a>printf<br />
+<li><a id="org6542cd1"></a>printf<br />
 <div class="outline-text-5" id="text-5-2-1-1">
 <div class="org-src-container">
 <pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
@@ -836,7 +948,7 @@ There are two kinds of output:
 </div>
 </div>
 </li>
-<li><a id="org327c07f"></a>DecimalFormat<br />
+<li><a id="org1ddf63d"></a>DecimalFormat<br />
 <div class="outline-text-5" id="text-5-2-1-2">
 <div class="org-src-container">
 <pre class="src src-java"><span style="font-weight: bold;">import</span> <span style="color: #383a42;">java</span>.<span style="color: #383a42;">text</span>.<span style="font-weight: bold;">DecimalFormat</span>;
@@ -855,7 +967,7 @@ There are two kinds of output:
 </div>
 </div>
 </li>
-<li><a id="org954da94"></a>SimpleDateFormat<br />
+<li><a id="org7d22dfc"></a>SimpleDateFormat<br />
 <div class="outline-text-5" id="text-5-2-1-3">
 <div class="org-src-container">
 <pre class="src src-java"><span style="font-weight: bold;">import</span> <span style="color: #383a42;">java</span>.<span style="color: #383a42;">text</span>.<span style="font-weight: bold;">ParseException</span>;
@@ -876,12 +988,12 @@ There are two kinds of output:
 </div>
 </div>
 </div>
-<div id="outline-container-org425264f" class="outline-2">
-<h2 id="org425264f"><span class="section-number-2">6.</span> Strings</h2>
+<div id="outline-container-org6e74e79" class="outline-2">
+<h2 id="org6e74e79"><span class="section-number-2">6.</span> Strings</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgd07f5f7" class="outline-3">
-<h3 id="orgd07f5f7"><span class="section-number-3">6.1.</span> Overview</h3>
+<div id="outline-container-org35a99c3" class="outline-3">
+<h3 id="org35a99c3"><span class="section-number-3">6.1.</span> Overview</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 Strings in Java are Objects that are backed internally by a char array.
@@ -905,8 +1017,8 @@ There are two ways to initialize a String object:
 </div>
 </div>
 
-<div id="outline-container-org0e485ce" class="outline-4">
-<h4 id="org0e485ce"><span class="section-number-4">6.1.1.</span> String Constant Pool</h4>
+<div id="outline-container-orgc8b02da" class="outline-4">
+<h4 id="orgc8b02da"><span class="section-number-4">6.1.1.</span> String Constant Pool</h4>
 <div class="outline-text-4" id="text-6-1-1">
 <p>
 When we create a String like <code class="src src-java"><span style="font-weight: bold;">String</span> <span style="color: #383a42;">str</span> = <span style="color: #8a3b3c;">"abc"</span>;</code>, JVM will first check the String Constant Pool.
@@ -916,8 +1028,8 @@ If exist, it will not create a new object but return the reference to it.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd8efefd" class="outline-4">
-<h4 id="orgd8efefd"><span class="section-number-4">6.1.2.</span> String is immutable</h4>
+<div id="outline-container-org12d290f" class="outline-4">
+<h4 id="org12d290f"><span class="section-number-4">6.1.2.</span> String is immutable</h4>
 <div class="outline-text-4" id="text-6-1-2">
 <ul class="org-ul">
 <li>Why String is immutable?
@@ -932,8 +1044,8 @@ If mutable, it might be changed.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2d85463" class="outline-4">
-<h4 id="org2d85463"><span class="section-number-4">6.1.3.</span> Reference count</h4>
+<div id="outline-container-org2996b21" class="outline-4">
+<h4 id="org2996b21"><span class="section-number-4">6.1.3.</span> Reference count</h4>
 <div class="outline-text-4" id="text-6-1-3">
 <div class="org-src-container">
 <pre class="src src-java"><span style="font-weight: bold;">String</span> <span style="color: #383a42;">s1</span> = <span style="color: #8a3b3c;">"abc"</span>;
@@ -943,12 +1055,12 @@ If mutable, it might be changed.</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org09d21a6" class="outline-3">
-<h3 id="org09d21a6"><span class="section-number-3">6.2.</span> String Alternatives</h3>
+<div id="outline-container-orgf9382df" class="outline-3">
+<h3 id="orgf9382df"><span class="section-number-3">6.2.</span> String Alternatives</h3>
 <div class="outline-text-3" id="text-6-2">
 </div>
-<div id="outline-container-org4b72274" class="outline-4">
-<h4 id="org4b72274"><span class="section-number-4">6.2.1.</span> StringBuffer(Recommended)</h4>
+<div id="outline-container-org26e94d6" class="outline-4">
+<h4 id="org26e94d6"><span class="section-number-4">6.2.1.</span> StringBuffer(Recommended)</h4>
 <div class="outline-text-4" id="text-6-2-1">
 <p>
 StringBuffer is a peer class of String that provides much of the functionality of strings.
@@ -957,8 +1069,8 @@ StringBuffer represents growable and writable character sequences.
 </p>
 </div>
 </div>
-<div id="outline-container-org0dbf718" class="outline-4">
-<h4 id="org0dbf718"><span class="section-number-4">6.2.2.</span> StringBuilder</h4>
+<div id="outline-container-org0a61c54" class="outline-4">
+<h4 id="org0a61c54"><span class="section-number-4">6.2.2.</span> StringBuilder</h4>
 <div class="outline-text-4" id="text-6-2-2">
 <p>
 StringBuilder represents a mutable sequence of characters.
@@ -967,8 +1079,8 @@ An alternative to String, it creates a mutable sequence of characters.
 </p>
 </div>
 </div>
-<div id="outline-container-org06690a0" class="outline-4">
-<h4 id="org06690a0"><span class="section-number-4">6.2.3.</span> StringTokenizer</h4>
+<div id="outline-container-org24c75a1" class="outline-4">
+<h4 id="org24c75a1"><span class="section-number-4">6.2.3.</span> StringTokenizer</h4>
 <div class="outline-text-4" id="text-6-2-3">
 <p>
 StringTokenizer is used to break a string into tokens.
@@ -992,8 +1104,8 @@ A token is returned by taking a substring of the string that was used to create 
 </div>
 </div>
 </div>
-<div id="outline-container-orgcb6f27f" class="outline-4">
-<h4 id="orgcb6f27f"><span class="section-number-4">6.2.4.</span> StringJoiner</h4>
+<div id="outline-container-orge98b996" class="outline-4">
+<h4 id="orge98b996"><span class="section-number-4">6.2.4.</span> StringJoiner</h4>
 <div class="outline-text-4" id="text-6-2-4">
 <p>
 StringJoiner is used to construct a sequence of characters seperated by a delimiter and optionally starting with a supplied prefix or ending with a supplied suffix.
@@ -1002,12 +1114,12 @@ StringJoiner is used to construct a sequence of characters seperated by a delimi
 </div>
 </div>
 </div>
-<div id="outline-container-orgbbceaca" class="outline-2">
-<h2 id="orgbbceaca"><span class="section-number-2">7.</span> Arrays</h2>
+<div id="outline-container-org10c9357" class="outline-2">
+<h2 id="org10c9357"><span class="section-number-2">7.</span> Arrays</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org0579fbc" class="outline-3">
-<h3 id="org0579fbc"><span class="section-number-3">7.1.</span> Features of Arrays</h3>
+<div id="outline-container-org357c47d" class="outline-3">
+<h3 id="org357c47d"><span class="section-number-3">7.1.</span> Features of Arrays</h3>
 <div class="outline-text-3" id="text-7-1">
 <ol class="org-ol">
 <li>Arrays are dynamically allocated.</li>
@@ -1022,8 +1134,8 @@ If it&rsquo;s an array of object types, the references are stored in the array.<
 </ol>
 </div>
 
-<div id="outline-container-org424c708" class="outline-4">
-<h4 id="org424c708"><span class="section-number-4">7.1.1.</span> Final Arrays</h4>
+<div id="outline-container-org67d7122" class="outline-4">
+<h4 id="org67d7122"><span class="section-number-4">7.1.1.</span> Final Arrays</h4>
 <div class="outline-text-4" id="text-7-1-1">
 <p>
 When an object is decorated by <code>final</code> keyword, it cannot refer to another object.
@@ -1031,8 +1143,8 @@ If an Array object is <code>final</code>, it cannot be assigned to another Array
 </p>
 </div>
 </div>
-<div id="outline-container-org348bbdf" class="outline-4">
-<h4 id="org348bbdf"><span class="section-number-4">7.1.2.</span> Reflection Array</h4>
+<div id="outline-container-org732ec3b" class="outline-4">
+<h4 id="org732ec3b"><span class="section-number-4">7.1.2.</span> Reflection Array</h4>
 <div class="outline-text-4" id="text-7-1-2">
 <p>
 Normal Arrays is of type <code>java.util.Arrays</code>.
@@ -1062,8 +1174,8 @@ This Array class provides static methods to create and access Java arrays dynami
 </div>
 </div>
 
-<div id="outline-container-org59914cf" class="outline-3">
-<h3 id="org59914cf"><span class="section-number-3">7.2.</span> Utilizing an Array</h3>
+<div id="outline-container-orgb8aaf2a" class="outline-3">
+<h3 id="orgb8aaf2a"><span class="section-number-3">7.2.</span> Utilizing an Array</h3>
 <div class="outline-text-3" id="text-7-2">
 <div class="org-src-container">
 <pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span> <span style="color: #014980;">{</span>
@@ -1085,12 +1197,12 @@ This Array class provides static methods to create and access Java arrays dynami
 </div>
 </div>
 </div>
-<div id="outline-container-orgca331fe" class="outline-2">
-<h2 id="orgca331fe"><span class="section-number-2">8.</span> OOP</h2>
+<div id="outline-container-orgcb38afe" class="outline-2">
+<h2 id="orgcb38afe"><span class="section-number-2">8.</span> OOP</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org3ee032c" class="outline-3">
-<h3 id="org3ee032c"><span class="section-number-3">8.1.</span> Concepts of OOPs</h3>
+<div id="outline-container-orgf9767ff" class="outline-3">
+<h3 id="orgf9767ff"><span class="section-number-3">8.1.</span> Concepts of OOPs</h3>
 <div class="outline-text-3" id="text-8-1">
 <ul class="org-ul">
 <li>OOPs Concepts are as follows:
@@ -1140,12 +1252,12 @@ Done with the help of the signature and declaration of these entities.
 </ul>
 </div>
 </div>
-<div id="outline-container-org55c0885" class="outline-3">
-<h3 id="org55c0885"><span class="section-number-3">8.2.</span> Classes and Objects</h3>
+<div id="outline-container-orge2dca30" class="outline-3">
+<h3 id="orge2dca30"><span class="section-number-3">8.2.</span> Classes and Objects</h3>
 <div class="outline-text-3" id="text-8-2">
 </div>
-<div id="outline-container-orga78a7d1" class="outline-4">
-<h4 id="orga78a7d1"><span class="section-number-4">8.2.1.</span> Anonymous Objects</h4>
+<div id="outline-container-org406d7b2" class="outline-4">
+<h4 id="org406d7b2"><span class="section-number-4">8.2.1.</span> Anonymous Objects</h4>
 <div class="outline-text-4" id="text-8-2-1">
 <div class="org-src-container">
 <pre class="src src-java">btn.setOnAction<span style="color: #014980;">(</span><span style="font-weight: bold;">new</span> <span style="font-weight: bold;">EventHandler</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
@@ -1158,8 +1270,8 @@ Done with the help of the signature and declaration of these entities.
 </div>
 </div>
 </div>
-<div id="outline-container-org34db64c" class="outline-3">
-<h3 id="org34db64c"><span class="section-number-3">8.3.</span> Interface</h3>
+<div id="outline-container-orgc437aab" class="outline-3">
+<h3 id="orgc437aab"><span class="section-number-3">8.3.</span> Interface</h3>
 <div class="outline-text-3" id="text-8-3">
 <p>
 Interface is to achieve total abstraction.
@@ -1173,12 +1285,12 @@ Interface variables are final, public, and static, Abstract Class may contain no
 </pre>
 </div>
 </div>
-<div id="outline-container-org8a20786" class="outline-4">
-<h4 id="org8a20786"><span class="section-number-4">8.3.1.</span> New features since JDK8</h4>
+<div id="outline-container-orgb9243a4" class="outline-4">
+<h4 id="orgb9243a4"><span class="section-number-4">8.3.1.</span> New features since JDK8</h4>
 <div class="outline-text-4" id="text-8-3-1">
 </div>
 <ol class="org-ol">
-<li><a id="org396d805"></a>Use <code>default</code> keyword to implement in Interface.<br />
+<li><a id="org67eea5d"></a>Use <code>default</code> keyword to implement in Interface.<br />
 <div class="outline-text-5" id="text-8-3-1-1">
 <div class="org-src-container">
 <pre class="src src-java"><span style="font-weight: bold;">interface</span> <span style="font-weight: bold;">In</span> <span style="color: #014980;">{</span>
@@ -1197,7 +1309,7 @@ Interface variables are final, public, and static, Abstract Class may contain no
 </div>
 </div>
 </li>
-<li><a id="orgd697188"></a>Define static methods in interfaces that can be called without an object<br />
+<li><a id="org99e83ac"></a>Define static methods in interfaces that can be called without an object<br />
 <div class="outline-text-5" id="text-8-3-1-2">
 <div class="org-src-container">
 <pre class="src src-java"><span style="font-weight: bold;">interface</span> <span style="font-weight: bold;">In</span> <span style="color: #014980;">{</span>
@@ -1218,12 +1330,12 @@ Interface variables are final, public, and static, Abstract Class may contain no
 </ol>
 </div>
 </div>
-<div id="outline-container-org46d4507" class="outline-3">
-<h3 id="org46d4507"><span class="section-number-3">8.4.</span> Inheritance</h3>
+<div id="outline-container-org96e206f" class="outline-3">
+<h3 id="org96e206f"><span class="section-number-3">8.4.</span> Inheritance</h3>
 <div class="outline-text-3" id="text-8-4">
 </div>
-<div id="outline-container-orgdc08e05" class="outline-4">
-<h4 id="orgdc08e05"><span class="section-number-4">8.4.1.</span> Types of Inheritance</h4>
+<div id="outline-container-orgc4f3f17" class="outline-4">
+<h4 id="orgc4f3f17"><span class="section-number-4">8.4.1.</span> Types of Inheritance</h4>
 <div class="outline-text-4" id="text-8-4-1">
 <ul class="org-ul">
 <li>Single Inheritance</li>
@@ -1234,8 +1346,8 @@ Interface variables are final, public, and static, Abstract Class may contain no
 </ul>
 </div>
 </div>
-<div id="outline-container-org86cb6cb" class="outline-4">
-<h4 id="org86cb6cb"><span class="section-number-4">8.4.2.</span> Important Facts</h4>
+<div id="outline-container-org4c9d53a" class="outline-4">
+<h4 id="org4c9d53a"><span class="section-number-4">8.4.2.</span> Important Facts</h4>
 <div class="outline-text-4" id="text-8-4-2">
 <ul class="org-ul">
 <li>Every class(except Object), is a subclass of the Object class.</li>
@@ -1244,16 +1356,16 @@ Interface variables are final, public, and static, Abstract Class may contain no
 </ul>
 </div>
 </div>
-<div id="outline-container-org3d62e4d" class="outline-4">
-<h4 id="org3d62e4d"><span class="section-number-4">8.4.3.</span> Constructors</h4>
+<div id="outline-container-org7739ad3" class="outline-4">
+<h4 id="org7739ad3"><span class="section-number-4">8.4.3.</span> Constructors</h4>
 <div class="outline-text-4" id="text-8-4-3">
 <p>
 Constructors will be called from top to bottom.
 </p>
 </div>
 </div>
-<div id="outline-container-org45e2edb" class="outline-4">
-<h4 id="org45e2edb"><span class="section-number-4">8.4.4.</span> Multiple Inheritance</h4>
+<div id="outline-container-org2217733" class="outline-4">
+<h4 id="org2217733"><span class="section-number-4">8.4.4.</span> Multiple Inheritance</h4>
 <div class="outline-text-4" id="text-8-4-4">
 <p>
 Multiple Inheritance is not supported by class, the compiler cannot decide which method to use.
@@ -1263,8 +1375,8 @@ Because of ambiguity. If multiple inheritance by interface, and there is methods
 </p>
 </div>
 </div>
-<div id="outline-container-org95b898c" class="outline-4">
-<h4 id="org95b898c"><span class="section-number-4">8.4.5.</span> Interfaces and Inheritance</h4>
+<div id="outline-container-orgedb8ef1" class="outline-4">
+<h4 id="orgedb8ef1"><span class="section-number-4">8.4.5.</span> Interfaces and Inheritance</h4>
 <div class="outline-text-4" id="text-8-4-5">
 <ul class="org-ul">
 <li>A class can extends another class and implement one or more interfaces.</li>
@@ -1272,8 +1384,8 @@ Because of ambiguity. If multiple inheritance by interface, and there is methods
 </ul>
 </div>
 </div>
-<div id="outline-container-org9fea42d" class="outline-4">
-<h4 id="org9fea42d"><span class="section-number-4">8.4.6.</span> Comparison of Inheritance in C++ and Java</h4>
+<div id="outline-container-orgc6fc2ef" class="outline-4">
+<h4 id="orgc6fc2ef"><span class="section-number-4">8.4.6.</span> Comparison of Inheritance in C++ and Java</h4>
 <div class="outline-text-4" id="text-8-4-6">
 <ol class="org-ol">
 <li>In Java, all classes inherit from the Object class implicitly.</li>
@@ -1285,12 +1397,12 @@ Because of ambiguity. If multiple inheritance by interface, and there is methods
 </div>
 </div>
 </div>
-<div id="outline-container-orga1809af" class="outline-3">
-<h3 id="orga1809af"><span class="section-number-3">8.5.</span> Abstraction</h3>
+<div id="outline-container-org48296ae" class="outline-3">
+<h3 id="org48296ae"><span class="section-number-3">8.5.</span> Abstraction</h3>
 <div class="outline-text-3" id="text-8-5">
 </div>
-<div id="outline-container-orgca88f3c" class="outline-4">
-<h4 id="orgca88f3c"><span class="section-number-4">8.5.1.</span> Rules for abstraction classes and methods</h4>
+<div id="outline-container-org2f54ae7" class="outline-4">
+<h4 id="org2f54ae7"><span class="section-number-4">8.5.1.</span> Rules for abstraction classes and methods</h4>
 <div class="outline-text-4" id="text-8-5-1">
 <ul class="org-ul">
 <li>Any class that contains one or more abstract methods must also be declared with an abstract keyword</li>
@@ -1299,8 +1411,8 @@ Because of ambiguity. If multiple inheritance by interface, and there is methods
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbc747e6" class="outline-4">
-<h4 id="orgbc747e6"><span class="section-number-4">8.5.2.</span> Control Abstraction and Data Abstraction</h4>
+<div id="outline-container-org35e1f95" class="outline-4">
+<h4 id="org35e1f95"><span class="section-number-4">8.5.2.</span> Control Abstraction and Data Abstraction</h4>
 <div class="outline-text-4" id="text-8-5-2">
 <ul class="org-ul">
 <li>Data Abstraction: creating complex data types but giving out only essential operations</li>
@@ -1309,16 +1421,16 @@ Because of ambiguity. If multiple inheritance by interface, and there is methods
 </div>
 </div>
 </div>
-<div id="outline-container-orgbc9cff4" class="outline-3">
-<h3 id="orgbc9cff4"><span class="section-number-3">8.6.</span> Encapsulation</h3>
+<div id="outline-container-org088cdfd" class="outline-3">
+<h3 id="org088cdfd"><span class="section-number-3">8.6.</span> Encapsulation</h3>
 <div class="outline-text-3" id="text-8-6">
 <p>
 Providing a protective shield for data and methods hiding in the unit.
 </p>
 </div>
 </div>
-<div id="outline-container-org232484d" class="outline-3">
-<h3 id="org232484d"><span class="section-number-3">8.7.</span> Polymorphism</h3>
+<div id="outline-container-org684ba4d" class="outline-3">
+<h3 id="org684ba4d"><span class="section-number-3">8.7.</span> Polymorphism</h3>
 <div class="outline-text-3" id="text-8-7">
 <p>
 Polymorphism is that in which we can perform a task in multiple forms or ways.
@@ -1335,8 +1447,8 @@ achieved by method overriding</li>
 </ul></li>
 </ul>
 </div>
-<div id="outline-container-org9d2963f" class="outline-4">
-<h4 id="org9d2963f"><span class="section-number-4">8.7.1.</span> Runtime Polymorphism</h4>
+<div id="outline-container-org196fc81" class="outline-4">
+<h4 id="org196fc81"><span class="section-number-4">8.7.1.</span> Runtime Polymorphism</h4>
 <div class="outline-text-4" id="text-8-7-1">
 <p>
 Runtime Polymorphism only support method polymorphism, not data polymorphism.
@@ -1349,10 +1461,234 @@ Subclass will have a copy of superclass&rsquo;s method inside, choosing method b
 </div>
 </div>
 </div>
+<div id="outline-container-org6e840f7" class="outline-2">
+<h2 id="org6e840f7"><span class="section-number-2">9.</span> Constructor</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-orgdb66447" class="outline-3">
+<h3 id="orgdb66447"><span class="section-number-3">9.1.</span> Copy Constructor</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+Java doesn&rsquo;t create a default copy constructor if you don&rsquo;t write your own.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #556b2f;">// </span><span style="color: #556b2f;">java calling copy constructor</span>
+<span style="font-weight: bold;">Complex</span> <span style="color: #383a42;">c2</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">Complex</span><span style="color: #014980;">(</span>c1<span style="color: #014980;">)</span>;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org258843c" class="outline-3">
+<h3 id="org258843c"><span class="section-number-3">9.2.</span> Constructor Chain</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+Using <code>this()</code> for chain in the same class.
+Using <code>super()</code> for chain across superclasses and subclasses.
+</p>
+</div>
+</div>
+<div id="outline-container-org0cc269d" class="outline-3">
+<h3 id="org0cc269d"><span class="section-number-3">9.3.</span> Init Block</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+init blocks are those we want run before the construction
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span>
+<span style="color: #014980;">{</span>
+    <span style="color: #556b2f;">// </span><span style="color: #556b2f;">first init block</span>
+    <span style="color: #a626a4;">{</span>
+        System.out.println<span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"first init"</span><span style="color: #556b2f;">)</span>;
+    <span style="color: #a626a4;">}</span>
+    Test<span style="color: #a626a4;">()</span>
+    <span style="color: #a626a4;">{</span>
+        System.out.println<span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"constructor"</span><span style="color: #556b2f;">)</span>;
+    <span style="color: #a626a4;">}</span>
+    <span style="color: #556b2f;">// </span><span style="color: #556b2f;">second init block</span>
+    <span style="color: #a626a4;">{</span>
+        System.out.println<span style="color: #556b2f;">(</span><span style="color: #8a3b3c;">"second init"</span><span style="color: #556b2f;">)</span>;
+    <span style="color: #a626a4;">}</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">main</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span><span style="color: #556b2f;">[]</span> <span style="color: #383a42;">args</span><span style="color: #a626a4;">)</span>
+    <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">Test</span><span style="color: #556b2f;">()</span>;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org86208a2" class="outline-3">
+<h3 id="org86208a2"><span class="section-number-3">9.4.</span> Private Constructor</h3>
+<div class="outline-text-3" id="text-9-4">
+<p>
+What for?
+</p>
+<ol class="org-ol">
+<li>Internal Constructor Chaining</li>
+<li>Singleton class design pattern</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org7df72be" class="outline-2">
+<h2 id="org7df72be"><span class="section-number-2">10.</span> Methods</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org2744110" class="outline-3">
+<h3 id="org2744110"><span class="section-number-3">10.1.</span> Java is strictly passed by value.</h3>
+<div class="outline-text-3" id="text-10-1">
+<p>
+When passing a primitive type, only pass a copy of the primitive type.
+When passing a object type, pass a reference to the object.
+</p>
+</div>
+</div>
+<div id="outline-container-org5a065ee" class="outline-3">
+<h3 id="org5a065ee"><span class="section-number-3">10.2.</span> Method Overriding</h3>
+<div class="outline-text-3" id="text-10-2">
+</div>
+<div id="outline-container-org14057a7" class="outline-4">
+<h4 id="org14057a7"><span class="section-number-4">10.2.1.</span> Overriding methods can allow more, but not less access than the overriden methods</h4>
+<div class="outline-text-4" id="text-10-2-1">
+<p>
+if the superclass method is protected, the subclass method can be protected or public, but not private.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc8c46c0" class="outline-4">
+<h4 id="orgc8c46c0"><span class="section-number-4">10.2.2.</span> Final methods cannot be overriden</h4>
+</div>
+<div id="outline-container-orgd29234a" class="outline-4">
+<h4 id="orgd29234a"><span class="section-number-4">10.2.3.</span> static methods cannot be overriden</h4>
+<div class="outline-text-4" id="text-10-2-3">
+<p>
+If there is a subclass method with the same signature, it&rsquo;s called method hiding.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdfa7d7f" class="outline-4">
+<h4 id="orgdfa7d7f"><span class="section-number-4">10.2.4.</span> private methods cannot be overriden</h4>
+</div>
+<div id="outline-container-orgd569aa8" class="outline-4">
+<h4 id="orgd569aa8"><span class="section-number-4">10.2.5.</span> The overriding method must have the same return type</h4>
+</div>
+<div id="outline-container-org49c15ea" class="outline-4">
+<h4 id="org49c15ea"><span class="section-number-4">10.2.6.</span> Invoking overriden method from sub-class</h4>
+<div class="outline-text-4" id="text-10-2-6">
+<p>
+Use <code>super</code> keyword
+</p>
+</div>
+</div>
+<div id="outline-container-orgc895548" class="outline-4">
+<h4 id="orgc895548"><span class="section-number-4">10.2.7.</span> Overriding and Exception Handling</h4>
+<div class="outline-text-4" id="text-10-2-7">
+<ol class="org-ol">
+<li>If the superclass overriden method does not throw an exception, subclass overriding method can only throw the unchecked exception.</li>
+<li>If the superclass overriden method does throw an exception, subclass overriding method can only throw the same or child exception, throwing parent exception will cause compiler error.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org57d13a8" class="outline-2">
+<h2 id="org57d13a8"><span class="section-number-2">11.</span> Interface</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Used to achieve total abstraction and support multiple inheritance.
+A class can implement Comparator Interface to be used to sort a collection.
+</p>
+</div>
+<div id="outline-container-org5ca77dc" class="outline-3">
+<h3 id="org5ca77dc"><span class="section-number-3">11.1.</span> Inheritance of Interface</h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>Why multiple inheritance is not supported through class but interface?
+To avoid ambiguity.
+After Java 8, interfaces also have implementation of methods.
+If there is ambiguity, the compiler will ask you to implement the method.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd31fb49" class="outline-3">
+<h3 id="orgd31fb49"><span class="section-number-3">11.2.</span> Functional Interfaces</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+A functional interface is an interface that contains only one abstract method.
+E.g. Runnable, ActionListener, Comparable
+</p>
+</div>
+<div id="outline-container-orge37b6e1" class="outline-4">
+<h4 id="orge37b6e1"><span class="section-number-4">11.2.1.</span> @FunctionalInterface Annotation</h4>
+<div class="outline-text-4" id="text-11-2-1">
+<p>
+@FunctionalInterface is used to ensure that the functional interface can&rsquo;t have more than one abstract method.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org95db3de" class="outline-3">
+<h3 id="org95db3de"><span class="section-number-3">11.3.</span> Marker Interface</h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+Empty interface.
+E.g. Serializable, Clonable, Remote
+</p>
+</div>
+<div id="outline-container-org6a240a6" class="outline-4">
+<h4 id="org6a240a6"><span class="section-number-4">11.3.1.</span> Clonable</h4>
+<div class="outline-text-4" id="text-11-3-1">
+<p>
+A class that implements <code>Clonable</code> indicates that it is legal for clone() method to make a field-for-field copy.
+By convention, classes that implement this interface should override Object.clone() method.
+</p>
+</div>
+</div>
+<div id="outline-container-orgce4f8de" class="outline-4">
+<h4 id="orgce4f8de"><span class="section-number-4">11.3.2.</span> Serializable</h4>
+<div class="outline-text-4" id="text-11-3-2">
+<p>
+It is used to make an object eligible for saving its state into a file.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb3fdf6d" class="outline-4">
+<h4 id="orgb3fdf6d"><span class="section-number-4">11.3.3.</span> Remote</h4>
+<div class="outline-text-4" id="text-11-3-3">
+<p>
+Making a class <code>remote</code> indicates the object is stored at one machine, and accessed from another machine.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Student</span>
+<span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">rollno</span>;
+<span style="color: #014980;">}</span>
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold;">SortByRoll</span> <span style="font-weight: bold;">implements</span> <span style="font-weight: bold;">Comparator</span><span style="color: #014980;">&lt;</span><span style="font-weight: bold;">Student</span><span style="color: #014980;">&gt;</span>
+<span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">int</span> <span style="font-weight: bold;">compare</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">Student</span> <span style="color: #383a42;">a</span>, <span style="font-weight: bold;">Student</span> <span style="color: #383a42;">b</span><span style="color: #a626a4;">)</span>
+    <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">return</span> a.rollno - b.rollno;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+<span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Test</span>
+<span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">ArrayList</span><span style="color: #a626a4;">&lt;</span><span style="font-weight: bold;">Student</span><span style="color: #a626a4;">&gt;</span> <span style="color: #383a42;">al</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">ArrayList</span><span style="color: #a626a4;">&lt;&gt;()</span>;
+    <span style="color: #556b2f;">// </span><span style="color: #556b2f;">add elements</span>
+    Collections.sort<span style="color: #a626a4;">(</span>al, <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">SortByRoll</span><span style="color: #556b2f;">()</span><span style="color: #a626a4;">)</span>;
+<span style="color: #014980;">}</span>
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Bondsam</p>
-<p class="date">Created: 2022-05-24 Tue 23:19</p>
+<p class="date">Created: 2022-06-03 Fri 22:37</p>
 </div>
 </body>
 </html>
