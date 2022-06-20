@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-06-21 Tue 00:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Leetcode</title>
+<meta name="author" content="Caihao Hu" />
+<meta name="description" content="This org file will record the Leetcode questions I solved." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Leetcode</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org53ab20f">1. 2022</a>
+<ul>
+<li><a href="#org79be0b0">1.1. May</a>
+<ul>
+<li><a href="#org2f8dd72">1.1.1. <span class="done DONE">DONE</span> Leetcode 2022-05-17</a></li>
+<li><a href="#orgcd2fba1">1.1.2. <span class="done DONE">DONE</span> Leetcode 2022-05-18</a></li>
+<li><a href="#orgcb321dd">1.1.3. <span class="done DONE">DONE</span> Leetcode 2022-05-21</a></li>
+<li><a href="#org46f0aff">1.1.4. <span class="done DONE">DONE</span> Leetcode 2022-05-22</a></li>
+<li><a href="#orge9a4afa">1.1.5. <span class="done DONE">DONE</span> Leetcode 2022-05-23</a></li>
+<li><a href="#orgf7db269">1.1.6. <span class="done DONE">DONE</span> Leetcode 2022-05-24</a></li>
+<li><a href="#org41587d1">1.1.7. <span class="done DONE">DONE</span> Leetcode 2022-05-25</a></li>
+<li><a href="#org122d220">1.1.8. <span class="done DONE">DONE</span> Leetcode 2022-05-26</a></li>
+<li><a href="#org2ddd714">1.1.9. <span class="done DONE">DONE</span> Leetcode 2022-05-27</a></li>
+<li><a href="#org9d1aa92">1.1.10. <span class="done DONE">DONE</span> Leetcode 2022-05-28</a></li>
+<li><a href="#org1f7265c">1.1.11. <span class="done DONE">DONE</span> Leetcode 2022-05-29</a></li>
+<li><a href="#org6be17b0">1.1.12. <span class="done DONE">DONE</span> Leetcode 2022-05-30</a></li>
+<li><a href="#org5da213f">1.1.13. <span class="done DONE">DONE</span> Leetcode 2022-05-31</a></li>
+</ul>
+</li>
+<li><a href="#org7e0b2e0">1.2. June</a>
+<ul>
+<li><a href="#org65b2fb9">1.2.1. <span class="done DONE">DONE</span> Leetcode 2022-06-01</a></li>
+<li><a href="#org16f78d1">1.2.2. <span class="done DONE">DONE</span> Leetcode 2022-06-03</a></li>
+<li><a href="#orgb5b1caa">1.2.3. <span class="done DONE">DONE</span> Leetcode 2022-06-04</a></li>
+<li><a href="#org53b6e3c">1.2.4. <span class="done DONE">DONE</span> Leetcode 2022-06-05</a></li>
+<li><a href="#org1f94cd8">1.2.5. <span class="done DONE">DONE</span> Leetcode 2022-06-08</a></li>
+<li><a href="#orgf75f9db">1.2.6. <span class="done DONE">DONE</span> Leetcode 2022-06-09</a></li>
+<li><a href="#org52020fd">1.2.7. <span class="done DONE">DONE</span> Leetcode 2022-06-10</a></li>
+<li><a href="#org8159c51">1.2.8. <span class="done DONE">DONE</span> Leetcode 2022-06-13</a></li>
+<li><a href="#org9f03ef4">1.2.9. <span class="done DONE">DONE</span> Leetcode 2022-06-14</a></li>
+<li><a href="#orgef72f64">1.2.10. <span class="done DONE">DONE</span> Leetcode 2022-06-15</a></li>
+<li><a href="#org099df3c">1.2.11. <span class="done DONE">DONE</span> Leetcode 2022-06-16</a></li>
+<li><a href="#org3a9462f">1.2.12. <span class="done DONE">DONE</span> Leetcode 2022-06-17</a></li>
+<li><a href="#org4f54e18">1.2.13. <span class="done DONE">DONE</span> Leetcode 2022-06-18</a></li>
+<li><a href="#orgfb08905">1.2.14. <span class="done DONE">DONE</span> Leetcode 2022-06-19</a></li>
+<li><a href="#org1ab7f75">1.2.15. <span class="done DONE">DONE</span> Leetcode 2022-06-20</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf1b56c1">2. Technologies</a>
+<ul>
+<li><a href="#org0601761">2.1. Fast multiplication</a></li>
+<li><a href="#org1be3aa7">2.2. Fast exponentiation</a></li>
+<li><a href="#org959c915">2.3. Brain Kernighan&rsquo;s Algorithm</a></li>
+<li><a href="#org8a5b124">2.4. Sliding Window</a></li>
+<li><a href="#org97d7196">2.5. Prefix + HashMap</a></li>
+<li><a href="#orga4330b4">2.6. Monotonic stack</a></li>
+<li><a href="#orgb65e508">2.7. Use bin to get duplicate element</a></li>
+<li><a href="#org4b517af">2.8. Customized priority queue</a></li>
+<li><a href="#org45817da">2.9. Trie</a></li>
+<li><a href="#orgc548bee">2.10. Binary Search</a></li>
+<li><a href="#orge8eeced">2.11. Merge Sort</a></li>
+<li><a href="#orgacfbc46">2.12. Backtrack</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="https://leetcode.cn/problem-list/e8X3pBZi/">剑指Offer</a>
+</p>
+
+<div id="outline-container-org53ab20f" class="outline-2">
+<h2 id="org53ab20f"><span class="section-number-2">1.</span> 2022</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org79be0b0" class="outline-3">
+<h3 id="org79be0b0"><span class="section-number-3">1.1.</span> May</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org2f8dd72" class="outline-4">
+<h4 id="org2f8dd72"><span class="section-number-4">1.1.1.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-17</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 1: <a href="https://leetcode.cn/problems/xoh6Oh/">001.Integer Division</a>
+<a href="#org0601761">Fast multiplication</a> is similar to <a href="#org1be3aa7">Fast exponentiation</a>
+Here we use fast multiplication to quickly reach the final result.</li>
+<li class="on"><code>[X]</code> Question 2: <a href="https://leetcode.cn/problems/powx-n/">50.Pow(x, n)</a></li>
+<li class="on"><code>[X]</code> Question 3: <a href="https://leetcode.cn/problems/JFETK5/">002.Binary Addition</a>
+Use a carry bit to mark.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcd2fba1" class="outline-4">
+<h4 id="orgcd2fba1"><span class="section-number-4">1.1.2.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-18</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 4 <a href="https://leetcode.cn/problems/w3tCBm/">003. Count of 1 of n binary numbers</a>
+Observe the difference between odd and even.</li>
+<li class="on"><code>[X]</code> Question 5 <a href="https://leetcode.cn/problems/WGki4K/">004. The number that shows up only once</a>
+Count bits and mod 3.</li>
+<li class="on"><code>[X]</code> Question 6 <a href="https://leetcode.cn/problems/aseY1I/">005. Max multiplication of the length of words</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcb321dd" class="outline-4">
+<h4 id="orgcb321dd"><span class="section-number-4">1.1.3.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-21</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 7 <a href="https://leetcode.cn/problems/kLl5u1/">006. The sum of two sorted arrays</a></li>
+<li class="on"><code>[X]</code> Question 8 <a href="https://leetcode.cn/problems/1fGaJU/">007. The three numbers whose sum are 0</a></li>
+<li class="on"><code>[X]</code> Question 9 <a href="https://leetcode.cn/problems/2VG8Kg/">008. The shortest subarray whose sum is larger than target</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org46f0aff" class="outline-4">
+<h4 id="org46f0aff"><span class="section-number-4">1.1.4.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-22</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<ul class="org-ul">
+<li>CLOSING NOTE <span class="timestamp-wrapper"><span class="timestamp">[2022-05-22 Sun 22:55] </span></span> <br />
+Topic: Handling subarray problems
+Solutions:
+See if what we want is one way increasing:
+<ul class="org-ul">
+<li>if yes, use sliding window</li>
+<li>if not, use hashmap to store prefix sum</li>
+</ul></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 10 <a href="https://leetcode.cn/problems/ZVAVXX/">009. Subarray with multiplication less than K</a>
+Sliding window, suitable for one-way increasing or decreasing situations</li>
+<li class="on"><code>[X]</code> Question 11 <a href="https://leetcode.cn/problems/QTMn0o/">010. Subarray with sum of K</a>
+Use a HashMap to store the prefix sum and its count.</li>
+<li class="on"><code>[X]</code> Question 12 <a href="https://leetcode.cn/problems/A1NYOS/">011. Subarray with same 0 and 1 count</a>
+Use a HashMap to store the prefix sum and its leftmost index.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge9a4afa" class="outline-4">
+<h4 id="orge9a4afa"><span class="section-number-4">1.1.5.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-23</h4>
+<div class="outline-text-4" id="text-1-1-5">
+<ul class="org-ul">
+<li>CLOSING NOTE <span class="timestamp-wrapper"><span class="timestamp">[2022-05-23 Mon 18:24] </span></span> <br />
+Easy, Use a structure to store the information of the subregion</li>
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 13 <a href="https://leetcode.cn/problems/tvdfij/">012. Sum of left subarray equals sum of right subarray</a></li>
+<li class="on"><code>[X]</code> Question 14 <a href="https://leetcode.cn/problems/O4NDxx/">013. Sum of 2D sub-matrix</a>
+Two-Dimensional prefix sum</li>
+<li class="on"><code>[X]</code> Question 15 <a href="https://leetcode.cn/problems/MPnaiL/">014. Permutation-in-string</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf7db269" class="outline-4">
+<h4 id="orgf7db269"><span class="section-number-4">1.1.6.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-24</h4>
+<div class="outline-text-4" id="text-1-1-6">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 16 <a href="https://leetcode.cn/problems/VabMRr/">015. Find all anagrams in a string</a></li>
+<li class="on"><code>[X]</code> Question 17 <a href="https://leetcode.cn/problems/wtcaE1/">016. Longest substring without repeating characters</a></li>
+<li class="on"><code>[X]</code> Question 18 <a href="https://leetcode.cn/problems/M1oyTv/">017. Mininum window substring</a>
+Use an array to store the appearance of the characters.
+Positive characters are those in String T.
+Negative are those in String S, not in T.
+Our aim is to let there be no positive characters, and shrink the window at the same time.
+Once there are no positive characters, shrink from left until there is positive characters and update the result.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org41587d1" class="outline-4">
+<h4 id="org41587d1"><span class="section-number-4">1.1.7.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-25</h4>
+<div class="outline-text-4" id="text-1-1-7">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 19 <a href="https://leetcode.cn/problems/XltzEq/">018. Valid palindrome</a></li>
+<li class="on"><code>[X]</code> Question 20 <a href="https://leetcode.cn/problems/RQku0D/">019. Valid palindrome II</a></li>
+<li class="on"><code>[X]</code> Question 21 <a href="https://leetcode.cn/problems/a7VOhD/">020. Palindromic-substrings</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org122d220" class="outline-4">
+<h4 id="org122d220"><span class="section-number-4">1.1.8.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-26</h4>
+<div class="outline-text-4" id="text-1-1-8">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 22 <a href="https://leetcode.cn/problems/SLwz0R/">021. Remove nth node from end of list</a></li>
+<li class="on"><code>[X]</code> Question 23 <a href="https://leetcode.cn/problems/c32eOV/">022. Linked List cycle II</a></li>
+<li class="on"><code>[X]</code> Question 24 <a href="https://leetcode.cn/problems/3u1WK4/">023. Intersection of two linked lists</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2ddd714" class="outline-4">
+<h4 id="org2ddd714"><span class="section-number-4">1.1.9.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-27</h4>
+<div class="outline-text-4" id="text-1-1-9">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 25 <a href="https://leetcode.cn/problems/UHnkqh/">024. Reverse linked list</a></li>
+<li class="on"><code>[X]</code> Question 26 <a href="https://leetcode.cn/problems/lMSNwu/">025. Add two numbers II</a></li>
+<li class="on"><code>[X]</code> Question 27 <a href="https://leetcode.cn/problems/LGjMqU/">026. Reorder list</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9d1aa92" class="outline-4">
+<h4 id="org9d1aa92"><span class="section-number-4">1.1.10.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-28</h4>
+<div class="outline-text-4" id="text-1-1-10">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 28 <a href="https://leetcode.cn/problems/aMhZSa/">027. Palindrome linked list</a></li>
+<li class="on"><code>[X]</code> Question 29 <a href="https://leetcode.cn/problems/Qv1Da2/">028. Flatten a multilevel doubly linked list</a></li>
+<li class="on"><code>[X]</code> Question 30 <a href="https://leetcode.cn/problems/4ueAj6/">029. Insert into a sorted circular linked list</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f7265c" class="outline-4">
+<h4 id="org1f7265c"><span class="section-number-4">1.1.11.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-29</h4>
+<div class="outline-text-4" id="text-1-1-11">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 31 <a href="https://leetcode.cn/problems/FortPu/">030. Insert delete getrandom</a></li>
+<li class="on"><code>[X]</code> Question 32 <a href="https://leetcode.cn/problems/FortPu/">031. LRU cache</a></li>
+<li class="on"><code>[X]</code> Question 33 <a href="https://leetcode.cn/problems/dKk3P7/">032. Valid anagram</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6be17b0" class="outline-4">
+<h4 id="org6be17b0"><span class="section-number-4">1.1.12.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-30</h4>
+<div class="outline-text-4" id="text-1-1-12">
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 34 <a href="https://leetcode.cn/problems/sfvd7V/">033. group anagrams</a></li>
+<li class="on"><code>[X]</code> Question 35 <a href="https://leetcode.cn/problems/lwyVBB/">034. Verifying an alien dictionary</a></li>
+<li class="on"><code>[X]</code> Question 36 <a href="https://leetcode.cn/problems/569nqc/">035. Mininum time difference</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5da213f" class="outline-4">
+<h4 id="org5da213f"><span class="section-number-4">1.1.13.</span> <span class="done DONE">DONE</span> Leetcode 2022-05-31</h4>
+<div class="outline-text-4" id="text-1-1-13">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-05-31 Tue 20:57]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;REST&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-05-31 Tue 17:52]</span></span></li>
+<li>State &ldquo;REST&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-05-31 Tue 17:33]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-05-31 Tue 15:39]</span></span></li>
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 37 <a href="https://leetcode.cn/problems/8Zf90G/">036. Evaluate reverse polish notation</a>
+Use stack.</li>
+<li class="on"><code>[X]</code> Question 38 <a href="https://leetcode.cn/problems/XagZNi/">037. Asterioid collision</a>
+Use stack.</li>
+<li class="on"><code>[X]</code> Question 39 <a href="https://leetcode.cn/problems/iIQa4I/">038. Daily temperature</a>
+Use monotonic stack.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7e0b2e0" class="outline-3">
+<h3 id="org7e0b2e0"><span class="section-number-3">1.2.</span> June</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org65b2fb9" class="outline-4">
+<h4 id="org65b2fb9"><span class="section-number-4">1.2.1.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-01</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-01 Wed 21:33]</span></span></li>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-01 Wed 22:56]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 40 <a href="https://leetcode.cn/problems/0ynMMM/">039. Largest rectangle in histogram</a>
+Use monotonic stack.
+Make sure the stack is increasing.
+So the area can be updated by st.lastElementHeight * width(from i to the element index)</li>
+<li class="on"><code>[X]</code> Question 41 <a href="https://leetcode.cn/problems/PLYXKQ/">040. Maximal rectangle</a>
+Transform the question to Question 40</li>
+<li class="on"><code>[X]</code> Question 42 <a href="https://leetcode.cn/problems/qIsx9U/">041. Moving average from data stream</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org16f78d1" class="outline-4">
+<h4 id="org16f78d1"><span class="section-number-4">1.2.2.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-03</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-03 Fri 22:27]</span></span></li>
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 43 <a href="https://leetcode.cn/problems/H8086Q/">042. Number of recent calls</a>
+Use Queue.</li>
+<li class="on"><code>[X]</code> Question 44 <a href="https://leetcode.cn/problems/NaqhDT/">043. Complete binary tree inserter</a>
+Use Queue.</li>
+<li class="on"><code>[X]</code> Question 45 <a href="https://leetcode.cn/problems/hPov7L/">044. Find largest value in each tree row</a>
+Use Queue. Layer traversal.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb5b1caa" class="outline-4">
+<h4 id="orgb5b1caa"><span class="section-number-4">1.2.3.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-04</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-04 Sat 23:47]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-04 Sat 23:03]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 46 <a href="https://leetcode.cn/problems/LwUNpT/submissions/">045. Find bottom left tree node</a></li>
+<li class="on"><code>[X]</code> Question 47 <a href="https://leetcode.cn/problems/WNC0Lk/">046. Binary Tree right side view</a></li>
+<li class="on"><code>[X]</code> Question 48 <a href="https://leetcode.cn/problems/pOCWxh/">047. Binary Tree pruning</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org53b6e3c" class="outline-4">
+<h4 id="org53b6e3c"><span class="section-number-4">1.2.4.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-05</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-08 Wed 00:39]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;REST&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-07 Tue 23:41]</span></span></li>
+<li>State &ldquo;REST&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-06 Mon 00:25]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-05 Sun 22:53]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[1/1]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 49 <a href="https://leetcode.cn/problems/h54YBf/">048. Serialize and deserialize binary tree</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f94cd8" class="outline-4">
+<h4 id="org1f94cd8"><span class="section-number-4">1.2.5.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-08</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-08 Wed 21:20]</span></span></li>
+<li>Questions <code>[5/5]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 50 <a href="https://leetcode.cn/problems/3Etpl5/">049. Sum root to leaf numbers</a></li>
+<li class="on"><code>[X]</code> Question 51 <a href="https://leetcode.cn/problems/6eUYwP/">050. Path sum III</a></li>
+<li class="on"><code>[X]</code> Question 52 <a href="https://leetcode.cn/problems/jC7MId/">051. Binary Tree Maximum Sum</a></li>
+<li class="on"><code>[X]</code> Question 53 <a href="https://leetcode.cn/problems/NYBBNL/">052. Increasing order search tree</a></li>
+<li class="on"><code>[X]</code> Question 54 <a href="https://leetcode.cn/problems/P5rCT8/">053. Inorder successor in BST</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf75f9db" class="outline-4">
+<h4 id="orgf75f9db"><span class="section-number-4">1.2.6.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-09</h4>
+<div class="outline-text-4" id="text-1-2-6">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-10 Fri 01:11]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-10 Fri 00:13]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 55 <a href="https://leetcode.cn/problems/w6cpku/?favoriteSlug=e8X3pBZi">054. Convert BST to greater tree</a></li>
+<li class="on"><code>[X]</code> Question 56 <a href="https://leetcode.cn/problems/kTOapQ/?favoriteSlug=e8X3pBZi">055. Binary Search Tree Iterater</a></li>
+<li class="on"><code>[X]</code> Question 57 <a href="https://leetcode.cn/problems/opLdQZ/">056. Two sum IV input is a BST</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org52020fd" class="outline-4">
+<h4 id="org52020fd"><span class="section-number-4">1.2.7.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-10</h4>
+<div class="outline-text-4" id="text-1-2-7">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-10 Fri 23:41]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-10 Fri 22:26]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 58 <a href="https://leetcode.cn/problems/7WqeDu/">057. Contains duplicate III</a>
+Use bin to get duplicate
+If two elements get into the same bin, then duplicated.</li>
+<li class="on"><code>[X]</code> Question 59 <a href="https://leetcode.cn/problems/fi9suh/">058. My calendar I</a>
+Use two arraylist, first compare start with current ends, then compare then end with the start.</li>
+<li class="on"><code>[X]</code> Question 60 <a href="https://leetcode.cn/problems/jBjn9C/">059. Kth largest element in a stream</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8159c51" class="outline-4">
+<h4 id="org8159c51"><span class="section-number-4">1.2.8.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-13</h4>
+<div class="outline-text-4" id="text-1-2-8">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-14 Tue 00:01]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-13 Mon 22:25]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 61 <a href="https://leetcode.cn/problems/g5c51o/">060. TopK frequent elements</a>
+Self-customized priority queue</li>
+<li class="on"><code>[X]</code> Quesiton 62 <a href="https://leetcode.cn/problems/qn8gGX/">061. Find K pairs with smallest sums</a>
+Use priority queue</li>
+<li class="on"><code>[X]</code> Question 63 <a href="https://leetcode.cn/problems/QC3q1f/">062. Implement Trie prefix tree</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9f03ef4" class="outline-4">
+<h4 id="org9f03ef4"><span class="section-number-4">1.2.9.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-14</h4>
+<div class="outline-text-4" id="text-1-2-9">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-14 Tue 22:26]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-14 Tue 20:16]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 64 <a href="https://leetcode.cn/problems/UhWRSj/">063. Replace words</a>
+Use Trie</li>
+<li class="on"><code>[X]</code> Question 65 <a href="https://leetcode.cn/problems/US1pGT/">064. Implement Magic Dictionary</a>
+Use Trie
+Replace each character, if not success, then false.</li>
+<li class="on"><code>[X]</code> Question 66 <a href="https://leetcode.cn/problems/iSwD2y/">065. Short coding of words</a>
+Use reversed trie</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgef72f64" class="outline-4">
+<h4 id="orgef72f64"><span class="section-number-4">1.2.10.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-15</h4>
+<div class="outline-text-4" id="text-1-2-10">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-16 Thu 00:25]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-15 Wed 22:53]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 67 <a href="https://leetcode.cn/problems/z1R5dt/">066. Map sum pairs</a>
+Use trie</li>
+<li class="on"><code>[X]</code> Question 68 <a href="https://leetcode.cn/problems/ms70jA/">067. Max xor of two numbers in an array</a>
+Use trie or hashset</li>
+<li class="on"><code>[X]</code> Question 69 <a href="https://leetcode.cn/problems/N6YdxV/">068. Search insert position</a>
+Binary Search</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org099df3c" class="outline-4">
+<h4 id="org099df3c"><span class="section-number-4">1.2.11.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-16</h4>
+<div class="outline-text-4" id="text-1-2-11">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-16 Thu 20:06]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-16 Thu 19:07]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 70 <a href="https://leetcode.cn/problems/B1IidL/">069. Peak index in a mountain array</a>
+Binary Search</li>
+<li class="on"><code>[X]</code> Question 71 <a href="https://leetcode.cn/problems/skFtm2/">070. Single element in a sorted array</a></li>
+<li class="on"><code>[X]</code> Question 72 <a href="https://leetcode.cn/problems/cuyjEf/">071. Random pick with weight</a>
+Use prefixSum and Binary search</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3a9462f" class="outline-4">
+<h4 id="org3a9462f"><span class="section-number-4">1.2.12.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-17</h4>
+<div class="outline-text-4" id="text-1-2-12">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-17 Fri 22:41]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-17 Fri 21:31]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Question <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 73 <a href="https://leetcode.cn/problems/jJ0w9p/">072. SqrtX</a>
+Binary Search</li>
+<li class="on"><code>[X]</code> Question 74 <a href="https://leetcode.cn/problems/nZZqjQ/">073. Koko eating bananas</a>
+Use Binary Search</li>
+<li class="on"><code>[X]</code> Question 75 <a href="https://leetcode.cn/problems/SsGoHC/">074. Merge Intervals</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4f54e18" class="outline-4">
+<h4 id="org4f54e18"><span class="section-number-4">1.2.13.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-18</h4>
+<div class="outline-text-4" id="text-1-2-13">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-18 Sat 23:26]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-18 Sat 22:19]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 76 <a href="https://leetcode.cn/problems/0H97ZC/">075. Relative sort array</a>
+HashMap + PriorityQueue</li>
+<li class="on"><code>[X]</code> Question 77 <a href="https://leetcode.cn/problems/xx4gT2/">076. Kth largest element in an array</a>
+Priority Queue</li>
+<li class="on"><code>[X]</code> Question 78 <a href="https://leetcode.cn/problems/7WHec2/">077. Sort List</a>
+Merge Sort</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfb08905" class="outline-4">
+<h4 id="orgfb08905"><span class="section-number-4">1.2.14.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-19</h4>
+<div class="outline-text-4" id="text-1-2-14">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-19 Sun 16:27]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-19 Sun 15:31]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 79 <a href="https://leetcode.cn/problems/vvXgSW/">078. Merge K sorted Lists</a>
+Merge Sort</li>
+<li class="on"><code>[X]</code> Question 80 <a href="https://leetcode.cn/problems/TVdhkn/">079. Subsets</a>
+Backtrack</li>
+<li class="on"><code>[X]</code> Question 81 <a href="https://leetcode.cn/problems/uUsW3B/">080. Combination</a>
+Backtrack</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1ab7f75" class="outline-4">
+<h4 id="org1ab7f75"><span class="section-number-4">1.2.15.</span> <span class="done DONE">DONE</span> Leetcode 2022-06-20</h4>
+<div class="outline-text-4" id="text-1-2-15">
+<ul class="org-ul">
+<li>State &ldquo;DONE&rdquo;       from &ldquo;DOING&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2022-06-20 Mon 23:21]</span></span></li>
+<li>State &ldquo;DOING&rdquo;      from &ldquo;TODO&rdquo;       <span class="timestamp-wrapper"><span class="timestamp">[2022-06-20 Mon 22:00]</span></span></li>
+</ul>
+<ul class="org-ul">
+<li>Questions <code>[3/3]</code>
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Question 82 <a href="https://leetcode.cn/problems/Ygoe9J">081. Combination Sum</a>
+Backtrack, backpack problem</li>
+<li class="on"><code>[X]</code> Question 83 <a href="https://leetcode.cn/problems/4sjJUc/">082. Combination Sum II</a>
+<ol class="org-ol">
+<li>Avoid duplication
+sort
+if element i == element i-1, continue</li>
+<li>Cut branch</li>
+</ol></li>
+<li class="on"><code>[X]</code> Question 84 <a href="https://leetcode.cn/problems/VvJkup/">083. Permutation</a>
+Use visited array to record visited elements</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf1b56c1" class="outline-2">
+<h2 id="orgf1b56c1"><span class="section-number-2">2.</span> Technologies</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org0601761" class="outline-3">
+<h3 id="org0601761"><span class="section-number-3">2.1.</span> Fast multiplication</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Fast multiplication uses bit manipulation to accelerate multiplication.
+</p>
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #383a42; font-weight: bold;">#include</span><span style="color: #8a3b3c;">&lt;stdio.h&gt;</span>
+<span style="font-weight: bold;">int</span> <span style="font-weight: bold;">main</span> () {
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">a</span> = -<span style="color: #8a3b3c; font-weight: bold;">35</span>;
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">b</span> = -<span style="color: #8a3b3c; font-weight: bold;">2</span>;
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">quotient</span> = <span style="color: #8a3b3c; font-weight: bold;">0</span>;
+    <span style="font-weight: bold;">while</span> (a &lt;= b) {
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">base</span> = <span style="color: #8a3b3c; font-weight: bold;">1</span>;
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">divisor</span> = b;
+    <span style="font-weight: bold;">while</span> (a - divisor &lt;= divisor) {
+        divisor &lt;&lt;= <span style="color: #8a3b3c; font-weight: bold;">1</span>;
+        base &lt;&lt;= <span style="color: #8a3b3c; font-weight: bold;">1</span>;
+    }
+    quotient += base;
+    a -= divisor;
+    }
+    printf(<span style="color: #8a3b3c;">"%d\n"</span>, quotient);
+    <span style="font-weight: bold;">return</span> <span style="color: #8a3b3c; font-weight: bold;">0</span>;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1be3aa7" class="outline-3">
+<h3 id="org1be3aa7"><span class="section-number-3">2.2.</span> Fast exponentiation</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Fast exponentiation uses multiplication of the same number to accelerate.
+</p>
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #383a42; font-weight: bold;">#include</span> <span style="color: #8a3b3c;">&lt;iostream&gt;</span>
+<span style="font-weight: bold;">using</span> <span style="font-weight: bold;">namespace</span> <span style="color: #383a42;">std</span>;
+<span style="font-weight: bold;">int</span> <span style="font-weight: bold;">main</span>() {
+  <span style="font-weight: bold;">double</span> <span style="color: #383a42;">x</span> = <span style="color: #8a3b3c; font-weight: bold;">2</span>.;
+  <span style="font-weight: bold;">int</span> <span style="color: #383a42;">n</span> = <span style="color: #8a3b3c; font-weight: bold;">7</span>;
+  <span style="font-weight: bold;">bool</span> <span style="color: #383a42;">isFraction</span> = <span style="color: #383a42;">false</span>;
+  <span style="font-weight: bold;">if</span> (n &lt; <span style="color: #8a3b3c; font-weight: bold;">0</span>) {
+    n = -n;
+    isFraction = <span style="color: #383a42;">true</span>;
+  }
+  <span style="font-weight: bold;">int</span> <span style="color: #383a42;">exp</span> = <span style="color: #8a3b3c; font-weight: bold;">0</span>;
+  <span style="font-weight: bold;">double</span> <span style="color: #383a42;">res</span> = <span style="color: #8a3b3c; font-weight: bold;">1</span>.;
+  <span style="font-weight: bold;">while</span> (exp &lt; n) {
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">tmpExp</span> = <span style="color: #8a3b3c; font-weight: bold;">1</span>;
+    <span style="font-weight: bold;">double</span> <span style="color: #383a42;">base</span> = x;
+    <span style="font-weight: bold;">while</span> (tmpExp &lt; ((n-exp)&gt;&gt;<span style="color: #8a3b3c; font-weight: bold;">1</span>)) {
+      base *= base;
+      tmpExp &lt;&lt;= <span style="color: #8a3b3c; font-weight: bold;">1</span>;
+    }
+    exp += tmpExp;
+    res *= base;
+  }
+  cout &lt;&lt; (isFraction ? <span style="color: #8a3b3c; font-weight: bold;">1.0</span>/res : res) &lt;&lt; endl;
+  <span style="font-weight: bold;">return</span> <span style="color: #8a3b3c; font-weight: bold;">0</span>;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org959c915" class="outline-3">
+<h3 id="org959c915"><span class="section-number-3">2.3.</span> Brain Kernighan&rsquo;s Algorithm</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+When we subtract any number by 1, it inverts all the bits after the rightmost set bit(inclusive).
+101(5) -&gt; 100(4)
+1000(8) -&gt; 0111(7)
+Usage:
+x&amp;(x-1) = invert the rightmost set bit
+</p>
+</div>
+</div>
+<div id="outline-container-org8a5b124" class="outline-3">
+<h3 id="org8a5b124"><span class="section-number-3">2.4.</span> Sliding Window</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Solving subarray problems
+If the target is one way increasing(sum or mul), use sliding window to solve the problem.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org97d7196" class="outline-3">
+<h3 id="org97d7196"><span class="section-number-3">2.5.</span> Prefix + HashMap</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>Solving subarray problems
+Use HashMap to store the frequency or sum of a non-one-way increasing subarray problem.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga4330b4" class="outline-3">
+<h3 id="orga4330b4"><span class="section-number-3">2.6.</span> Monotonic stack</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Monotonic stack is to preserve a increasing or decreasing stack.
+Usually used to handle the problem of manipulate the relationship between incontinuous elements of an array.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb65e508" class="outline-3">
+<h3 id="orgb65e508"><span class="section-number-3">2.7.</span> Use bin to get duplicate element</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+If two elements get into the same bin, then duplicated.
+Say want to get element around <b>num</b> (+-t), just make the id=val/t, if two elements get into the same id, then they are close.
+</p>
+</div>
+</div>
+<div id="outline-container-org4b517af" class="outline-3">
+<h3 id="org4b517af"><span class="section-number-3">2.8.</span> Customized priority queue</h3>
+<div class="outline-text-3" id="text-2-8">
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #556b2f;">// </span><span style="color: #556b2f;">sort a two element int array</span>
+<span style="color: #556b2f;">// </span><span style="color: #556b2f;">smaller element is on the top</span>
+<span style="color: #556b2f;">// </span><span style="color: #556b2f;">so if m[1] &lt; n[1], m is on the top</span>
+<span style="font-weight: bold;">PriorityQueue</span><span style="color: #014980;">&lt;</span><span style="font-weight: bold;">int</span><span style="color: #a626a4;">[]</span><span style="color: #014980;">&gt;</span> <span style="color: #383a42;">queue</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">PriorityQueue</span><span style="color: #014980;">&lt;</span><span style="font-weight: bold;">int</span><span style="color: #a626a4;">[]</span><span style="color: #014980;">&gt;</span> <span style="color: #014980;">(</span>Comparator<span style="color: #a626a4;">&lt;</span><span style="font-weight: bold;">int</span><span style="color: #556b2f;">[]</span><span style="color: #a626a4;">&gt;()</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">int</span> <span style="font-weight: bold;">compare</span><span style="color: #556b2f;">(</span><span style="font-weight: bold;">int</span><span style="color: #b751b6;">[]</span> <span style="color: #383a42;">m</span>, <span style="font-weight: bold;">int</span><span style="color: #b751b6;">[]</span> <span style="color: #383a42;">n</span><span style="color: #556b2f;">)</span> <span style="color: #556b2f;">{</span>
+            <span style="font-weight: bold;">return</span> m<span style="color: #b751b6;">[</span><span style="color: #8a3b3c; font-weight: bold;">1</span><span style="color: #b751b6;">]</span> - n<span style="color: #b751b6;">[</span><span style="color: #8a3b3c; font-weight: bold;">1</span><span style="color: #b751b6;">]</span>;
+        <span style="color: #556b2f;">}</span>
+<span style="color: #a626a4;">}</span><span style="color: #014980;">)</span>;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org45817da" class="outline-3">
+<h3 id="org45817da"><span class="section-number-3">2.9.</span> Trie</h3>
+<div class="outline-text-3" id="text-2-9">
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">class</span> <span style="font-weight: bold;">Trie</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">private</span> <span style="font-weight: bold;">Trie</span><span style="color: #a626a4;">[]</span> <span style="color: #383a42;">children</span>;
+    <span style="font-weight: bold;">private</span> <span style="font-weight: bold;">boolean</span> <span style="color: #383a42;">isLeaf</span>;
+    <span style="font-weight: bold;">public</span> Trie<span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">this</span>.children = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">Trie</span><span style="color: #556b2f;">[</span><span style="color: #8a3b3c; font-weight: bold;">26</span><span style="color: #556b2f;">]</span>;
+        <span style="font-weight: bold;">this</span>.isLeaf = <span style="color: #383a42;">false</span>;
+    <span style="color: #a626a4;">}</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">insert</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span> <span style="color: #383a42;">word</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">Trie</span> <span style="color: #383a42;">node</span> = <span style="font-weight: bold;">this</span>.root;
+        <span style="font-weight: bold;">for</span> <span style="color: #556b2f;">(</span><span style="font-weight: bold;">char</span> <span style="color: #383a42;">c</span> : word.toCharArray<span style="color: #b751b6;">()</span><span style="color: #556b2f;">)</span> <span style="color: #556b2f;">{</span>
+            <span style="font-weight: bold;">int</span> <span style="color: #383a42;">index</span> = c - <span style="color: #8a3b3c;">'a'</span>;
+            <span style="font-weight: bold;">if</span> <span style="color: #b751b6;">(</span>node.children<span style="color: #014980;">[</span>index<span style="color: #014980;">]</span> == <span style="color: #383a42;">null</span><span style="color: #b751b6;">)</span> <span style="color: #b751b6;">{</span>
+                node.children<span style="color: #014980;">[</span>index<span style="color: #014980;">]</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">Trie</span><span style="color: #014980;">()</span>;
+            <span style="color: #b751b6;">}</span>
+            node = node.children<span style="color: #b751b6;">[</span>index<span style="color: #b751b6;">]</span>;
+        <span style="color: #556b2f;">}</span>
+        node.isLeaf = <span style="color: #383a42;">true</span>;
+    <span style="color: #a626a4;">}</span>
+    <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">boolean</span> <span style="font-weight: bold;">search</span><span style="color: #a626a4;">(</span><span style="font-weight: bold;">String</span> <span style="color: #383a42;">word</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">Trie</span> <span style="color: #383a42;">node</span> = <span style="font-weight: bold;">this</span>.root;
+        <span style="font-weight: bold;">for</span> <span style="color: #556b2f;">(</span><span style="font-weight: bold;">char</span> <span style="color: #383a42;">c</span> : word.toCharArray<span style="color: #b751b6;">()</span><span style="color: #556b2f;">)</span> <span style="color: #556b2f;">{</span>
+            <span style="font-weight: bold;">int</span> <span style="color: #383a42;">index</span> = c - <span style="color: #8a3b3c;">'a'</span>;
+            <span style="font-weight: bold;">if</span> <span style="color: #b751b6;">(</span>node.children<span style="color: #014980;">[</span>index<span style="color: #014980;">]</span> == <span style="color: #383a42;">null</span><span style="color: #b751b6;">)</span> <span style="font-weight: bold;">return</span> <span style="color: #383a42;">false</span>;
+            node = node.children<span style="color: #b751b6;">[</span>index<span style="color: #b751b6;">]</span>;
+        <span style="color: #556b2f;">}</span>
+        <span style="font-weight: bold;">return</span> node.isLeaf;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc548bee" class="outline-3">
+<h3 id="orgc548bee"><span class="section-number-3">2.10.</span> Binary Search</h3>
+<div class="outline-text-3" id="text-2-10">
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">int</span> <span style="color: #383a42;">start</span> = <span style="color: #8a3b3c; font-weight: bold;">0</span>, <span style="color: #383a42;">end</span> = length - <span style="color: #8a3b3c; font-weight: bold;">1</span>;
+<span style="font-weight: bold;">while</span> <span style="color: #014980;">(</span>start &lt;= end<span style="color: #014980;">)</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">mid</span> = <span style="color: #a626a4;">(</span>start + end<span style="color: #a626a4;">)</span> / <span style="color: #8a3b3c; font-weight: bold;">2</span>;
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">midVal</span> = array<span style="color: #a626a4;">[</span>mid<span style="color: #a626a4;">]</span>;
+    <span style="font-weight: bold;">if</span> <span style="color: #a626a4;">(</span>midVal == target<span style="color: #a626a4;">)</span> get;
+    <span style="font-weight: bold;">else</span> <span style="font-weight: bold;">if</span> <span style="color: #a626a4;">(</span>midVal &lt; <span style="font-weight: bold;">target</span><span style="color: #a626a4;">)</span> start = mid + <span style="color: #8a3b3c; font-weight: bold;">1</span>;
+    <span style="font-weight: bold;">else</span> end = mid - <span style="color: #8a3b3c; font-weight: bold;">1</span>;
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge8eeced" class="outline-3">
+<h3 id="orge8eeced"><span class="section-number-3">2.11.</span> Merge Sort</h3>
+<div class="outline-text-3" id="text-2-11">
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">private</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">mergeSort</span><span style="color: #014980;">(</span><span style="font-weight: bold;">int</span><span style="color: #a626a4;">[]</span> <span style="color: #383a42;">nums</span>, <span style="font-weight: bold;">int</span> <span style="color: #383a42;">left</span>, <span style="font-weight: bold;">int</span> <span style="color: #383a42;">right</span>, <span style="font-weight: bold;">int</span><span style="color: #a626a4;">[]</span> <span style="color: #383a42;">tmp</span><span style="color: #014980;">)</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">if</span> <span style="color: #a626a4;">(</span>left &gt;= right<span style="color: #a626a4;">)</span> <span style="font-weight: bold;">return</span>;
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">mid</span> = left + <span style="color: #a626a4;">(</span><span style="color: #556b2f;">(</span>right - left<span style="color: #556b2f;">)</span> &gt;&gt; <span style="color: #8a3b3c; font-weight: bold;">1</span><span style="color: #a626a4;">)</span>;
+    mergeSort<span style="color: #a626a4;">(</span>nums, left, mid, tmp<span style="color: #a626a4;">)</span>;
+    mergeSort<span style="color: #a626a4;">(</span>nums, mid+<span style="color: #8a3b3c; font-weight: bold;">1</span>, right, tmp<span style="color: #a626a4;">)</span>;
+    merge<span style="color: #a626a4;">(</span>nums, left, mid, right, tmp<span style="color: #a626a4;">)</span>;
+<span style="color: #014980;">}</span>
+<span style="font-weight: bold;">private</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">merge</span><span style="color: #014980;">(</span><span style="font-weight: bold;">int</span><span style="color: #a626a4;">[]</span> <span style="color: #383a42;">nums</span>, <span style="font-weight: bold;">int</span> <span style="color: #383a42;">left</span>, <span style="font-weight: bold;">int</span> <span style="color: #383a42;">mid</span>, <span style="font-weight: bold;">int</span> <span style="color: #383a42;">right</span>, <span style="font-weight: bold;">int</span><span style="color: #a626a4;">[]</span> <span style="color: #383a42;">tmp</span><span style="color: #014980;">)</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">tmp1</span> = left, <span style="color: #383a42;">tmp2</span> = mid + <span style="color: #8a3b3c; font-weight: bold;">1</span>;
+    <span style="font-weight: bold;">int</span> <span style="color: #383a42;">i</span> = left;
+    <span style="font-weight: bold;">while</span> <span style="color: #a626a4;">(</span>tmp1 &lt;= mid &amp;&amp; tmp2 &lt;= right<span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        <span style="font-weight: bold;">if</span> <span style="color: #556b2f;">(</span>nums<span style="color: #b751b6;">[</span>tmp1<span style="color: #b751b6;">]</span> &lt; nums<span style="color: #b751b6;">[</span>tmp2<span style="color: #b751b6;">]</span><span style="color: #556b2f;">)</span> <span style="color: #556b2f;">{</span>
+            tmp<span style="color: #b751b6;">[</span>i++<span style="color: #b751b6;">]</span> = nums<span style="color: #b751b6;">[</span>tmp1++<span style="color: #b751b6;">]</span>;
+        <span style="color: #556b2f;">}</span>
+        <span style="font-weight: bold;">else</span> <span style="color: #556b2f;">{</span>
+            tmp<span style="color: #b751b6;">[</span>i++<span style="color: #b751b6;">]</span> = nums<span style="color: #b751b6;">[</span>tmp2++<span style="color: #b751b6;">]</span>;
+        <span style="color: #556b2f;">}</span>
+    <span style="color: #a626a4;">}</span>
+    <span style="font-weight: bold;">while</span> <span style="color: #a626a4;">(</span>tmp1 &lt;= mid<span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        tmp<span style="color: #556b2f;">[</span>i++<span style="color: #556b2f;">]</span> = nums<span style="color: #556b2f;">[</span>tmp1++<span style="color: #556b2f;">]</span>;
+    <span style="color: #a626a4;">}</span>
+    <span style="font-weight: bold;">while</span> <span style="color: #a626a4;">(</span>tmp2 &lt;= right<span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        tmp<span style="color: #556b2f;">[</span>i++<span style="color: #556b2f;">]</span> = nums<span style="color: #556b2f;">[</span>tmp2++<span style="color: #556b2f;">]</span>;
+    <span style="color: #a626a4;">}</span>
+    <span style="font-weight: bold;">for</span> <span style="color: #a626a4;">(</span><span style="font-weight: bold;">int</span> <span style="color: #383a42;">k</span>=left; k&lt;=right; ++k<span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        nums<span style="color: #556b2f;">[</span>k<span style="color: #556b2f;">]</span> = tmp<span style="color: #556b2f;">[</span>k<span style="color: #556b2f;">]</span>;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgacfbc46" class="outline-3">
+<h3 id="orgacfbc46"><span class="section-number-3">2.12.</span> Backtrack</h3>
+<div class="outline-text-3" id="text-2-12">
+<div class="org-src-container">
+<pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">combination</span><span style="color: #014980;">(</span><span style="font-weight: bold;">int</span><span style="color: #a626a4;">[]</span> <span style="color: #383a42;">nums</span><span style="color: #014980;">)</span> <span style="color: #014980;">{</span>
+    <span style="font-weight: bold;">List</span><span style="color: #a626a4;">&lt;</span><span style="font-weight: bold;">List</span><span style="color: #556b2f;">&lt;</span><span style="font-weight: bold;">Integer</span><span style="color: #556b2f;">&gt;</span><span style="color: #a626a4;">&gt;</span> <span style="color: #383a42;">res</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">ArrayList</span><span style="color: #a626a4;">&lt;&gt;()</span>;
+    <span style="font-weight: bold;">LinkedList</span><span style="color: #a626a4;">&lt;</span><span style="font-weight: bold;">Integer</span><span style="color: #a626a4;">&gt;</span> <span style="color: #383a42;">comb</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold;">LinkedList</span><span style="color: #a626a4;">&lt;&gt;()</span>;
+    backtrack<span style="color: #a626a4;">(</span>nums, res, comb, <span style="color: #8a3b3c; font-weight: bold;">0</span><span style="color: #a626a4;">)</span>;
+    <span style="font-weight: bold;">return</span> res;
+<span style="color: #014980;">}</span>
+<span style="font-weight: bold;">private</span> <span style="font-weight: bold;">void</span> <span style="font-weight: bold;">backtrack</span><span style="color: #014980;">(</span><span style="font-weight: bold;">int</span><span style="color: #a626a4;">[]</span> <span style="color: #383a42;">nums</span>, <span style="font-weight: bold;">List</span><span style="color: #a626a4;">&lt;</span><span style="font-weight: bold;">List</span><span style="color: #556b2f;">&lt;</span><span style="font-weight: bold;">Integer</span><span style="color: #556b2f;">&gt;</span><span style="color: #a626a4;">&gt;</span> <span style="color: #383a42;">res</span>, <span style="font-weight: bold;">LinkedList</span><span style="color: #a626a4;">&lt;</span><span style="font-weight: bold;">Integer</span><span style="color: #a626a4;">&gt;</span> <span style="color: #383a42;">comb</span>, <span style="font-weight: bold;">int</span> <span style="color: #383a42;">start</span><span style="color: #014980;">)</span> <span style="color: #014980;">{</span>
+    res.add<span style="color: #a626a4;">(</span><span style="font-weight: bold;">new</span> <span style="font-weight: bold;">LinkedList</span><span style="color: #556b2f;">&lt;</span><span style="font-weight: bold;">Integer</span><span style="color: #556b2f;">&gt;(</span>comb<span style="color: #556b2f;">)</span><span style="color: #a626a4;">)</span>;
+    <span style="font-weight: bold;">for</span> <span style="color: #a626a4;">(</span><span style="font-weight: bold;">int</span> <span style="color: #383a42;">i</span>=start; i&lt;nums.<span style="font-weight: bold;">length</span>; ++i<span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+        comb.add<span style="color: #556b2f;">(</span>nums<span style="color: #b751b6;">[</span>i<span style="color: #b751b6;">]</span><span style="color: #556b2f;">)</span>;
+        backtrack<span style="color: #556b2f;">(</span>nums, res, comb, i+<span style="color: #8a3b3c; font-weight: bold;">1</span><span style="color: #556b2f;">)</span>;
+        comb.removeLast<span style="color: #556b2f;">()</span>;
+    <span style="color: #a626a4;">}</span>
+<span style="color: #014980;">}</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Caihao Hu</p>
+<p class="date">Created: 2022-06-21 Tue 00:00</p>
+</div>
+</body>
+</html>
